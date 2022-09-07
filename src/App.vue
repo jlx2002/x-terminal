@@ -4,11 +4,13 @@
  * @Autor: jlx
  * @Date: 2022-09-07 19:51:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-07 19:52:57
+ * @LastEditTime: 2022-09-07 20:42:04
 -->
 
 
-<template></template>
+<template>
+  <router-view />
+</template>
 
 <script setup lang="ts">
 </script>

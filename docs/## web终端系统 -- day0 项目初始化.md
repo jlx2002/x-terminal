@@ -9,3 +9,5 @@
 - loadash
 
 >  npm i unplugin-vue-components -D 按需加载
+
+基本配置已完成，明日任务把命令提交前的任务流程调试明白
