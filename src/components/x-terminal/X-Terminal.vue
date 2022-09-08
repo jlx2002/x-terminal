@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-08 10:51:16
+ * @LastEditTime: 2022-09-08 16:49:12
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -117,6 +117,8 @@ let inputCommand = ref<CommandInputType>({ ...initCommand });
 let outputList = ref<OutputType[]>([]);
 // 命令是否正在执行
 let isRunning = ref(false);
+// 全局记录当前命令
+let currentNewCommand: CommandOutputType;
 const doSubmitCommand = () => {
   // 输入框加锁
   isRunning.value = true;
@@ -131,6 +133,8 @@ const doSubmitCommand = () => {
     type: "command",
     resultList: [],
   };
+  currentNewCommand = newCommand; // 记录当前命令，以便写入结果
+
   // 输入框  恢复原样
   inputCommand.value = { ...initCommand };
   isRunning.value = false;

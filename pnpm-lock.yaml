@@ -5,6 +5,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   ant-design-vue: ^3.2.12
   axios: ^0.27.2
+  getopts: ^2.3.0
   pinia: ^2.0.22
   typescript: ^4.6.4
   unplugin-vue-components: ^0.22.4
@@ -16,6 +17,7 @@ specifiers:
 dependencies:
   ant-design-vue: 3.2.12_vue@3.2.38
   axios: 0.27.2
+  getopts: 2.3.0
   pinia: 2.0.22_pj7ch6rmow6odq73xb5hfvge3q
   vue: 3.2.38
   vue-router: 4.1.5_vue@3.2.38
@@ -676,6 +678,10 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
+
+  /getopts/2.3.0:
+    resolution: {integrity: sha512-5eDf9fuSXwxBL6q5HX+dhDj+dslFGWzU5thZ9kNKUkcPtaPdatmUFKwHFrLb/uf/WpA4BHET+AX3Scl56cAjpA==}
+    dev: false
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
