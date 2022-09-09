@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 17:02:03
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 11:09:30
+ * @LastEditTime: 2022-09-09 20:45:53
  */
 import { CommandType } from "../../../command";
 import { defineAsyncComponent } from "vue";
@@ -18,7 +18,7 @@ import ComponentOutputType = Terminal.ComponentOutputType;
 const helpCommand: CommandType = {
     func: "help",
     name: "查看帮助",
-    alias: ["man"],
+    alias: ["hh"],
     params: [
         {
             key: "commandName",

@@ -96,6 +96,7 @@ const doParse = (
             options.default[key] = defaultValue;
         }
     });
+    console.log("options: ", options);
     const parsedOptions = getopts(args, options);
     console.log("parsedOptions = ", parsedOptions);
     return parsedOptions;
