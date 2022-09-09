@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-09 17:01:24
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:42:46
+ * @LastEditTime: 2022-09-09 22:03:36
 -->
 <template>
   <div class="content-output">
@@ -27,6 +27,7 @@ import smartText from "@/utils/smartText";
 import OutputType = Terminal.OutputType;
 import { computed, toRefs } from "vue";
 
+// outPut 的props对象声明
 interface OutputProps {
   output: OutputType;
 }

@@ -4,59 +4,47 @@
  * @Autor: jlx
  * @Date: 2022-09-07 22:36:43
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:42:30
+ * @LastEditTime: 2022-09-09 23:02:58
  */
 
 declare namespace Terminal {
-  /**
-   * 输出状态
-   */
+  // 输出状态 对应标签输出的不同 颜色
   type OutputStatusType = "info" | "success" | "warning" | "error" | "system";
 
-  /**
-   * 输出类型
-   */
+  // 输出类型
   interface OutputType {
-    type: "command" | "text" | "component";
-    text?: string;
-    resultList?: OutputType[];
-    component?: any;
-    status?: OutputStatusType;
-    props?: any;
-    collapsible?: boolean;
+    type: "command" | "text" | "component"; // 限定type
+    text?: string; // 文本值
+    resultList?: OutputType[]; // 输出列表
+    component?: any; // 在type == component时通过defineAsyncComponent 引入
+    status?: OutputStatusType; // tag 标签内部的值，和上面OutputStatusType 相呼应，success 下 时limegreen
+    props?: any; // 在渲染子组件component时传递props对象
+    collapsible?: boolean; // 是否展开
   }
 
-  /**
-   * 命令类型输出
-   */
+  // 命令类型输出
   interface CommandOutputType extends OutputType {
     type: "command";
     text: string;
     resultList: OutputType[];
   }
 
-  /**
-   * 文本类型输出
-   */
+  // 文本类型输出
   interface TextOutputType extends OutputType {
     type: "text";
     text: string;
   }
 
-  /**
-   * 组件类型输出
-   */
+  // 组件类型输出
   interface ComponentOutputType extends OutputType {
     type: "component";
     component: any;
     props?: any;
   }
 
-  /**
-   * 命令输入类型
-   */
+  // 命令输入类型
   interface CommandInputType {
-    text: string;
+    text: string; // 输入框内部的值
     placeholder?: string;
   }
 
