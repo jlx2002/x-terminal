@@ -4,15 +4,19 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:19:02
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 16:55:57
+ * @LastEditTime: 2022-09-09 21:43:00
 -->
 <template>
-  <XTerminal  ref="terminalRef" full-screen :on-submit-command="onSubmitCommand"></XTerminal>
+  <XTerminal
+    ref="terminalRef"
+    full-screen
+    :on-submit-command="onSubmitCommand"
+  ></XTerminal>
 </template>
 
 <script setup lang="ts">
-  import {ref} from 'vue';
-import { doCommandExecute } from '@/core/commandExecutor';
+import { ref } from "vue";
+import { doCommandExecute } from "@/core/commandExecutor";
 const terminalRef = ref<any>();
 
 const onSubmitCommand = async (inputText: string) => {
@@ -24,6 +28,4 @@ const onSubmitCommand = async (inputText: string) => {
 };
 </script>
 
-
-<style>
-</style>
+<style></style>

@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 17:12:47
+ * @LastEditTime: 2022-09-09 21:42:39
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -90,7 +90,7 @@ export default {
 
 <script setup lang="ts">
 import contentOutput from "../shared/content-output.vue";
-import { mainStyle, wrapperStyle  } from "./X-Terminal-Style";
+import { mainStyle, wrapperStyle } from "./X-Terminal-Style";
 import { computed, ref, onMounted } from "vue";
 import UserType = User.UserType;
 import CommandOutputType = Terminal.CommandOutputType;
@@ -110,7 +110,7 @@ interface TerminalProps {
 const props = withDefaults(defineProps<TerminalProps>(), {
   height: "400px",
   fullScreen: false,
-  user: 'local' as any,
+  user: "local" as any,
 });
 // 折叠面板
 const activeKeys = ref<number[]>([]);
@@ -125,26 +125,26 @@ let inputCommand = ref<CommandInputType>({ ...initCommand });
 let outputList = ref<OutputType[]>([]);
 // 命令是否正在执行
 let isRunning = ref(false);
- const terminalRef = ref();
+const terminalRef = ref();
 // 全局记录当前命令
 let currentNewCommand: CommandOutputType;
 /**
  * 设置命令是否可折叠
  * @param collapsible
  */
- const setCommandCollapsible = (collapsible: boolean) => {
+const setCommandCollapsible = (collapsible: boolean) => {
   currentNewCommand.collapsible = collapsible;
 };
 // 清空所有输出
-const clear = ()=>{
+const clear = () => {
   outputList.value = [];
-}
+};
 /**
  * 写命令文本结果
  * @param text
  * @param status
  */
- const writeTextResult = (text: string, status?: OutputStatusType) => {
+const writeTextResult = (text: string, status?: OutputStatusType) => {
   const newOutput: TextOutputType = {
     text,
     type: "text",
@@ -194,7 +194,7 @@ const writeTextOutput = (text: string, status?: OutputStatusType) => {
  * 立即输出
  * @param newOutput
  */
- const writeOutput = (newOutput: OutputType) => {
+const writeOutput = (newOutput: OutputType) => {
   outputList.value.push(newOutput);
 };
 // 命令列表
@@ -214,7 +214,7 @@ const doSubmitCommand = async () => {
     resultList: [],
   };
   currentNewCommand = newCommand; // 记录当前命令，以便写入结果
- 
+
   // 执行命令
   await props.onSubmitCommand?.(inputText);
   // 添加输出（为空也要输出换行）
@@ -253,10 +253,10 @@ const terminal: TerminalType = {
 };
 onMounted(() => {
   terminal.writeTextOutput(
-      `Welcome to YuIndex, coolest browser index for geeks!` +
-        `<a href="//github.com/liyupi/yuindex" target='_blank'> GitHub Open Source</a>`
-    );
-})
+    `Welcome to YuIndex, coolest browser index for geeks!` +
+      `<a href="//github.com/liyupi/yuindex" target='_blank'> GitHub Open Source</a>`
+  );
+});
 defineExpose({
   terminal,
 });

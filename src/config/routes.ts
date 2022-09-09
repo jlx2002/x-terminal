@@ -4,20 +4,20 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:12:46
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-07 20:47:07
+ * @LastEditTime: 2022-09-09 21:42:52
  */
 
-import { createRouter, createWebHashHistory } from 'vue-router'
-
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const router: any = createRouter({
-    history: createWebHashHistory(),
-    routes: [{
-        name: 'index',
-        path: '/',
-        component: () => import("@/views/IndexPage.vue")
-    }]
-})
-
+  history: createWebHashHistory(),
+  routes: [
+    {
+      name: "index",
+      path: "/",
+      component: () => import("@/views/IndexPage.vue"),
+    },
+  ],
+});
 
 export default router;
