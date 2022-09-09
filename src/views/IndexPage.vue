@@ -4,14 +4,24 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:19:02
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-07 22:45:01
+ * @LastEditTime: 2022-09-09 16:55:57
 -->
 <template>
-  <XTerminal></XTerminal>
+  <XTerminal  ref="terminalRef" full-screen :on-submit-command="onSubmitCommand"></XTerminal>
 </template>
 
 <script setup lang="ts">
-import XTerminal from "@/components/x-terminal/X-Terminal.vue";
+  import {ref} from 'vue';
+import { doCommandExecute } from '@/core/commandExecutor';
+const terminalRef = ref<any>();
+
+const onSubmitCommand = async (inputText: string) => {
+  if (!inputText) {
+    return;
+  }
+  const terminal = terminalRef.value.terminal;
+  await doCommandExecute(inputText, terminal);
+};
 </script>
 
 

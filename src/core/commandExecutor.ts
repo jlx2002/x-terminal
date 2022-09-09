@@ -15,6 +15,7 @@ export const doCommandExecute = async (
     terminal: TerminalType,
     parentCommand?: CommandType
 ) => {
+
     //去除命令首尾空格
     text = text.trim();
     if (!text) {
@@ -113,6 +114,7 @@ const doAction = async (
     terminal: TerminalType,
     parentCommand?: CommandType
 ) => {
+
     const { help } = options;
     // 设置输出折叠
     if (command.collapsible || help) {

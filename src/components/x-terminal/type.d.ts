@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 22:36:43
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-08 09:37:35
+ * @LastEditTime: 2022-09-09 16:40:37
  */
 
 declare namespace Terminal {
@@ -79,22 +79,8 @@ declare namespace Terminal {
         writeTextSuccessResult: (text: string) => void;
         // 写命令结果
         writeResult: (output: OutputType) => void;
-        // 输入框聚焦
-        focusInput: () => void;
-        // 获取输入框是否聚焦
-        isInputFocused: () => boolean;
-        // 设置输入框的值
-        setTabCompletion: () => void;
         // 提交命令
         doSubmitCommand: () => void;
-        // 查看下一条命令
-        showNextCommand: () => void;
-        // 查看上一条命令
-        showPrevCommand: () => void;
-        // 查看历史命令
-        listCommandHistory: () => CommandOutputType[];
-        // 折叠 / 展开所有块
-        toggleAllCollapse: () => void;
         // 设置命令是否可折叠
         setCommandCollapsible: (collapsible: boolean) => void;
     }
