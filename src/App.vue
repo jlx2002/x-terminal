@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 19:51:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:43:04
+ * @LastEditTime: 2022-09-13 16:34:50
 -->
 
 <template>
@@ -12,4 +12,13 @@
 </template>
 
 <script setup lang="ts"></script>
-<style scoped></style>
+<style>
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+</style>

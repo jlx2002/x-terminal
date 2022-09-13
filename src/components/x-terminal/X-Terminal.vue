@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:42:39
+ * @LastEditTime: 2022-09-13 23:12:59
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -92,6 +92,7 @@ export default {
 import contentOutput from "../shared/content-output.vue";
 import { mainStyle, wrapperStyle } from "./X-Terminal-Style";
 import { computed, ref, onMounted } from "vue";
+import { doCommandExecute } from "@/core/commandExecutor";
 import UserType = User.UserType;
 import CommandOutputType = Terminal.CommandOutputType;
 import OutputType = Terminal.OutputType;
@@ -104,7 +105,7 @@ interface TerminalProps {
   height?: string | number;
   fullScreen?: boolean;
   user?: UserType;
-  onSubmitCommand?: (inputText: string) => void;
+  // onSubmitCommand?: (inputText: string) => void;
 }
 // 声明props 对象
 const props = withDefaults(defineProps<TerminalProps>(), {
@@ -158,6 +159,7 @@ const writeTextResult = (text: string, status?: OutputStatusType) => {
  * @param text
  */
 const writeTextErrorResult = (text: string) => {
+  console.log("error", text);
   writeTextResult(text, "error");
 };
 
@@ -197,6 +199,13 @@ const writeTextOutput = (text: string, status?: OutputStatusType) => {
 const writeOutput = (newOutput: OutputType) => {
   outputList.value.push(newOutput);
 };
+
+const onSubmitCommand = async (inputText: string) => {
+  if (!inputText) {
+    return;
+  }
+  await doCommandExecute(inputText, terminal);
+};
 // 命令列表
 const commandList = ref<CommandOutputType[]>([]);
 const doSubmitCommand = async () => {
@@ -214,9 +223,7 @@ const doSubmitCommand = async () => {
     resultList: [],
   };
   currentNewCommand = newCommand; // 记录当前命令，以便写入结果
-
-  // 执行命令
-  await props.onSubmitCommand?.(inputText);
+  await onSubmitCommand(inputText);
   // 添加输出（为空也要输出换行）
   outputList.value.push(newCommand);
   // 不为空字符串才算是有效命令
@@ -253,10 +260,11 @@ const terminal: TerminalType = {
 };
 onMounted(() => {
   terminal.writeTextOutput(
-    `Welcome to YuIndex, coolest browser index for geeks!` +
-      `<a href="//github.com/liyupi/yuindex" target='_blank'> GitHub Open Source</a>`
+    `Welcome to MyIndex, coolest browser index for geeks!`
   );
 });
+
+// 暴露给父组件
 defineExpose({
   terminal,
 });

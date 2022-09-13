@@ -1,8 +1,8 @@
 ## web 终端系统 -- day3 对命令注册器和执行器的深入了解
 
-#### 命令注册器commandRegister
+### 命令注册器 CommandRegister
 
-##### 命令列表：
+#### 命令列表：
 
 ```typescript
 // 命令列表
@@ -13,7 +13,7 @@ const commandList: CommandType[] = [helpCommand];
 
 后续添加命令，利用import导入命令后，添加到命令列表即可。
 
-##### 命令字典
+#### 命令字典
 
 利用一个ts里面的工具类型： **Record** 
 
@@ -43,7 +43,7 @@ const commandMap: Record<string | number, CommandType> = {};
 
 > 表示 key的类型可以是string 或者 number
 
-##### 遍历赋值命令字典：
+#### 遍历赋值命令字典：
 
 ```typescript
 // 遍历赋值
@@ -56,4 +56,105 @@ commandList.forEach((command) => {
   });
 });
 ```
+
+### 命令执行器 CommandExecutor
+
+调用命令执行器的执行函数大概有以下过程：
+
+1. 预处理传入的命令文本 （ 比如过滤敏感词，删除首尾空格，~~统一转小写~~）
+2.  通过解析文本，得到命令
+3.   解析参数
+4.   如果有子命令，递归调用执行子命令
+5.   调用执行命令，做某些action
+
+#### 预处理文本
+
+过滤敏感词（可能导致系统故障的词） => <u>后期待补</u>
+
+删除首尾空格：
+
+利用 trim 处理一下即可
+
+```js
+ //去除命令首尾空格
+  text = text.trim();
+  if (!text) {
+    return;
+  }
+```
+
+> 此处不太适合 统一转小写，因为可能出现中文字符或者命令大写字符特殊处理比如： -S  和 -s 语义不一样等情况
+
+#### 解析文本得到命令
+
+把文本通过空格进行切片，切片后，如果有父命令则在父命令中查找。
+
+```typescript
+/**
+ * 获取命令（匹配）
+ * @param text
+ * @param parentCommand
+ */
+const getCommand = (text: string, parentCommand?: CommandType): CommandType => {
+  let func = text.split(" ", 1)[0];
+  // 大小写无关
+  func = func.toLowerCase();
+  let commands = commandMap;
+  // 有父命令，则从父命令中查找
+  if (
+    parentCommand &&
+    parentCommand.subCommands &&
+    Object.keys(parentCommand.subCommands).length > 0
+  ) {
+    commands = parentCommand.subCommands;
+  }
+  const command = commands[func];
+  console.log("getCommand = ", command);
+  return command;
+};
+```
+
+#### 解析参数
+
+利用 getopts 库 提取出关键词
+
+```typescript
+
+/**
+ * 解析参数
+ * @param text
+ * @param commandOptions
+ */
+const doParse = (
+  text: string,
+  commandOptions: CommandOptionType[]
+): getopts.ParsedOptions => {
+  // 过滤掉关键词
+  const args: string[] = text.split(" ").slice(1);
+  // 转换
+  const options: getopts.Options = {
+    alias: {},
+    default: {},
+    string: [],
+    boolean: [],
+  };
+  commandOptions.forEach((commandOption) => {
+    const { alias, key, type, defaultValue } = commandOption;
+    if (alias && options.alias) {
+      options.alias[key] = alias;
+    }
+    options[type]?.push(key);
+    if (defaultValue && options.default) {
+      options.default[key] = defaultValue;
+    }
+  });
+  console.log("options: ", options);
+  const parsedOptions = getopts(args, options);
+  console.log("parsedOptions = ", parsedOptions);
+  return parsedOptions;
+};
+
+```
+
+
 

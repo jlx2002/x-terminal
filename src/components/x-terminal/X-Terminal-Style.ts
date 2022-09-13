@@ -4,17 +4,18 @@
  * @Autor: jlx
  * @Date: 2022-09-09 10:56:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:42:33
+ * @LastEditTime: 2022-09-13 16:34:59
  */
 import { computed, StyleValue } from "vue";
 // 终端主要样式，可以换成接收 height
 export const mainStyle = computed(() => {
   const fullScreenStyle: StyleValue = {
-    position: "fixed",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
+    // position: "fixed",
+    // top: 0,
+    // bottom: 0,
+    // left: 0,
+    // right: 0,
+    height: "100%",
   };
   return fullScreenStyle;
 });
