@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:59:03
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:33:50
+ * @LastEditTime: 2022-09-15 19:26:59
  */
 
 import { CommandType } from "../../command";
@@ -16,7 +16,7 @@ import { CommandType } from "../../command";
  */
 const giteeCommand: CommandType = {
   func: "gitee",
-  name: "Gitee搜索开源项目仓库",
+  name: "Gitee搜索开源项目",
   alias: [],
   params: [
     {

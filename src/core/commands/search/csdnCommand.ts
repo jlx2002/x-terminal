@@ -1,22 +1,23 @@
 /*
- * @Description: 请填写文件简介
+ * @Description:   csdn 开发者社区搜索
  * @Version: 0.0
  * @Autor: jlx
- * @Date: 2022-09-14 21:58:53
+ * @Date: 2022-09-15 16:22:45
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 19:27:04
+ * @LastEditTime: 2022-09-15 16:30:30
  */
+
 import { CommandType } from "../../command";
 
 /**
- * @description: github 仓库搜索
+ * @description:  csdn 搜索关键词
  * @return {*}
  * @author: jlx
  */
-const githubCommand: CommandType = {
-  func: "github",
-  name: "GitHub搜索开源项目",
-  alias: [],
+const csdnCommand: CommandType = {
+  func: "csdn",
+  name: "csdn搜索",
+  alias: ["csdn", "cs"],
   params: [
     {
       key: "word",
@@ -28,10 +29,11 @@ const githubCommand: CommandType = {
   action(options, terminal) {
     const { _ } = options;
     const word = _.length > 0 ? _[0] : "";
-    // https://github.com/search?q=vue
-    let targetLink = `https://github.com/search?q=${word}`;
+    // https://so.csdn.net/so/search?q=
+    let targetLink = `https://so.csdn.net/so/search?q=${word}`;
+
     window.open(targetLink);
   },
 };
 
-export default githubCommand;
+export default csdnCommand;

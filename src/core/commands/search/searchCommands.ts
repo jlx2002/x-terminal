@@ -1,16 +1,21 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 搜索命令 汇总
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:22:07
+ * @LastEditTime: 2022-09-15 19:57:35
  */
 import { CommandType } from "../../command";
 import baiduCommand from "./baiduCommand";
 import bingCommand from "./bingCommand";
+import csdnCommand from "./csdnCommand";
+import doubanCommand from "./doubanCommand";
 import giteeCommand from "./giteeCommand";
 import githubCommand from "./githubCommand";
+import googleCommand from "./googleCommand";
+import juejinCommand from "./juejinCommand";
+import zhihuCommand from "./zhihuCommand";
 
 /**
  * @description: 搜索源
@@ -22,6 +27,11 @@ const fromDict: Record<string, CommandType> = {
   bing: bingCommand,
   gitee: giteeCommand,
   github: githubCommand,
+  csdn: csdnCommand,
+  douban: doubanCommand,
+  google: googleCommand,
+  juejin: juejinCommand,
+  zhihu: zhihuCommand,
 };
 
 /**

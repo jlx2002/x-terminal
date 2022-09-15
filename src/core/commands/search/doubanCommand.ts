@@ -1,21 +1,22 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 豆瓣搜索
  * @Version: 0.0
  * @Autor: jlx
- * @Date: 2022-09-14 21:58:53
+ * @Date: 2022-09-15 16:25:25
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 19:27:04
+ * @LastEditTime: 2022-09-15 16:32:05
  */
+
 import { CommandType } from "../../command";
 
 /**
- * @description: github 仓库搜索
+ * @description:  豆瓣 搜索关键词
  * @return {*}
  * @author: jlx
  */
-const githubCommand: CommandType = {
-  func: "github",
-  name: "GitHub搜索开源项目",
+const doubanCommand: CommandType = {
+  func: "douban",
+  name: "豆瓣搜索关键词",
   alias: [],
   params: [
     {
@@ -28,10 +29,11 @@ const githubCommand: CommandType = {
   action(options, terminal) {
     const { _ } = options;
     const word = _.length > 0 ? _[0] : "";
-    // https://github.com/search?q=vue
-    let targetLink = `https://github.com/search?q=${word}`;
+    // https://www.douban.com/search?q=
+    let targetLink = `https://www.douban.com/search?q=${word}`;
+
     window.open(targetLink);
   },
 };
 
-export default githubCommand;
+export default doubanCommand;
