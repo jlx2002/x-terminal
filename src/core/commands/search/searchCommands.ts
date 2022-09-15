@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 19:57:35
+ * @LastEditTime: 2022-09-15 22:05:18
  */
 import { CommandType } from "../../command";
 import baiduCommand from "./baiduCommand";
@@ -15,6 +15,7 @@ import giteeCommand from "./giteeCommand";
 import githubCommand from "./githubCommand";
 import googleCommand from "./googleCommand";
 import juejinCommand from "./juejinCommand";
+import leetcodeCommand from "./leetcode/leetcodeCommand";
 import zhihuCommand from "./zhihuCommand";
 
 /**
@@ -32,6 +33,7 @@ const fromDict: Record<string, CommandType> = {
   google: googleCommand,
   juejin: juejinCommand,
   zhihu: zhihuCommand,
+  leetcode: leetcodeCommand,
 };
 
 /**

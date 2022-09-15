@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-15 19:56:28
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 20:58:05
+ * @LastEditTime: 2022-09-15 22:07:52
  */
 import { CommandType } from "@/core/command";
 import { calcBiWeekly, calcWeekly } from "./calcContest";
@@ -16,7 +16,7 @@ import { calcBiWeekly, calcWeekly } from "./calcContest";
  */
 const leetcodeCommand: CommandType = {
   func: "leetcode",
-  name: "力扣搜索题库题目或者进入周赛入口",
+  name: "搜索题目,周赛入口",
   alias: ["lc", "leet"],
   params: [
     {
@@ -26,13 +26,6 @@ const leetcodeCommand: CommandType = {
     },
   ],
   options: [
-    {
-      key: "problem",
-      alias: ["p"],
-      desc: "题目描述",
-      type: "boolean",
-      defaultValue: true,
-    },
     {
       key: "weekly",
       alias: ["w"],
@@ -68,3 +61,5 @@ const leetcodeCommand: CommandType = {
     window.open(targetLink);
   },
 };
+
+export default leetcodeCommand;
