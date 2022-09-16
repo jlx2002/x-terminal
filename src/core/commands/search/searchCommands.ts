@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:04:10
+ * @LastEditTime: 2022-09-16 22:06:20
  */
 import { CommandType } from "../../command";
 import acwingCommand from "./acwing/acwingCommand";
@@ -52,7 +52,7 @@ const fromDict: Record<string, CommandType> = {
 const searchCommand: CommandType = {
   func: "search",
   name: "网页搜索",
-  //
+  // 缩略
   alias: ["s", "sousuo", "sou", "query"],
   desc: "支持从不同平台快捷搜索内容",
   params: [

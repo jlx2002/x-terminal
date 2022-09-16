@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-16 10:53:23
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 21:57:38
+ * @LastEditTime: 2022-09-16 22:08:44
  */
 import { CommandType } from "@/core/command";
 import { getContestLink } from "./calcAcwContest";
@@ -41,7 +41,8 @@ const acwingCommand: CommandType = {
     if (weekly) {
       // 返回合适的场数
       const entrance = await getContestLink();
-      targetLink = entrance.data.data;
+      // console.log(entrance.data);
+      targetLink = entrance.data;
     }
     // 没有 -w的情况， 就搜索题目内容
     else {

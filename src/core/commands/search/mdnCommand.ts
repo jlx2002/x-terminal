@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-14 22:31:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:42:43
+ * @LastEditTime: 2022-09-16 22:06:01
  */
 import { CommandType } from "../../command";
 
@@ -15,7 +15,7 @@ import { CommandType } from "../../command";
  */
 const mdnCommand: CommandType = {
   func: "mdn",
-  name: "mdn中文文档查询关键词",
+  name: "mdn文档查询关键词",
   alias: ["mdn", "mozillamdn"],
   params: [
     {
