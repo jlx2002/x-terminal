@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 菜鸟教程搜索关键词
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 22:42:17
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:46:50
+ * @LastEditTime: 2022-09-16 22:37:02
  */
 import { CommandType } from "../../command";
 

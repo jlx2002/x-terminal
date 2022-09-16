@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 力扣搜索和周赛入口
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-15 19:56:28
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 22:07:52
+ * @LastEditTime: 2022-09-16 22:36:26
  */
 import { CommandType } from "@/core/command";
 import { calcBiWeekly, calcWeekly } from "./calcContest";

@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: bing 必应搜索关键词
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 21:53:18
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:33:39
+ * @LastEditTime: 2022-09-16 22:36:53
  */
 import { CommandType } from "../../command";
 

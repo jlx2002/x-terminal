@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: github 仓库搜索
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 21:58:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 19:27:04
+ * @LastEditTime: 2022-09-16 22:37:32
  */
 import { CommandType } from "../../command";
 

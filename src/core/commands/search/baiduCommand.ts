@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: baidu 搜索
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 21:41:47
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-14 22:02:02
+ * @LastEditTime: 2022-09-16 22:36:38
  */
 import { CommandType } from "../../command";
 

@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: mdn 搜索关键词
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-14 22:31:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:06:01
+ * @LastEditTime: 2022-09-16 22:37:52
  */
 import { CommandType } from "../../command";
 
@@ -29,7 +29,7 @@ const mdnCommand: CommandType = {
     const { _ } = options;
     const word = _.length > 0 ? _[0] : "";
     // https://developer.mozilla.org/zh-CN/search?q=json.stringfy&sort=best
-    let targetLink = `https://developer.mozilla.org/zh-CN/search?q=$${word}`;
+    let targetLink = `https://developer.mozilla.org/zh-CN/search?q=${word}`;
     window.open(targetLink);
   },
 };

@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 计算acw周赛场数
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-16 20:45:45
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 21:53:23
+ * @LastEditTime: 2022-09-16 22:36:03
  */
 import dayjs from "@/plugins/myDayjs";
 import myAxios from "@/plugins/myAxios";

@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 计算力扣周赛和双周赛场数
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-15 20:12:51
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 21:48:00
+ * @LastEditTime: 2022-09-16 22:35:44
  */
 import dayjs from "@/plugins/myDayjs";
 
