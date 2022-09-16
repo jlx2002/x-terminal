@@ -63,7 +63,7 @@ commandList.forEach((command) => {
 
 1. 预处理传入的命令文本 （ 比如过滤敏感词，删除首尾空格，~~统一转小写~~）
 2.  通过解析文本，得到命令
-3.   解析参数
+3.    利用getopts来解析命令得到参数
 4.   如果有子命令，递归调用执行子命令
 5.   调用执行命令，做某些action
 
@@ -71,7 +71,10 @@ commandList.forEach((command) => {
 
 过滤敏感词（可能导致系统故障的词） => <u>后期待补</u>
 
-删除首尾空格：
+```typescript
+// 终端类型（定义一组访问及操作终端的方法） 
+interface TerminalType {    // 清屏    clear: () => void;    // 立即输出    writeOutput: (output: OutputType) => void;    // 立即输出文本    writeTextOutput: (text: string, status?: OutputStatusType) => void;    // 写命令文本结果    writeTextResult: (text: string, status?: OutputStatusType) => void;    // 写命令错误文本结果    writeTextErrorResult: (text: string) => void;    // 写命令成功文本结果    writeTextSuccessResult: (text: string) => void;    // 写命令结果    writeResult: (output: OutputType) => void;    // 提交命令    doSubmitCommand: () => void;    // 设置命令是否可折叠    setCommandCollapsible: (collapsible: boolean) => void;  }
+```
 
 利用 trim 处理一下即可
 
