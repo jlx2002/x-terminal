@@ -4,14 +4,19 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 19:53:16
+ * @LastEditTime: 2022-09-16 18:40:45
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
 import searchCommands from "./commands/search/searchCommands";
+import weatherCommand from "./commands/weather/weatherCommand";
 
 // 命令列表
-const commandList: CommandType[] = [helpCommand, ...searchCommands];
+const commandList: CommandType[] = [
+  helpCommand,
+  ...searchCommands,
+  weatherCommand,
+];
 
 // 命令字典
 const commandMap: Record<string, CommandType> = {};
