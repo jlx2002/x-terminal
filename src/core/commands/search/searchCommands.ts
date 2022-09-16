@@ -10,6 +10,7 @@ import { CommandType } from "../../command";
 import baiduCommand from "./baiduCommand";
 import bilibiliCommand from "./bilibiliCommand";
 import bingCommand from "./bingCommand";
+import cainiaoCommand from "./cainiaoCommand";
 import csdnCommand from "./csdnCommand";
 import doubanCommand from "./doubanCommand";
 import giteeCommand from "./giteeCommand";
@@ -38,6 +39,7 @@ const fromDict: Record<string, CommandType> = {
   leetcode: leetcodeCommand,
   bilibili: bilibiliCommand,
   mdn: mdnCommand,
+  cainiao: cainiaoCommand,
 };
 
 /**
