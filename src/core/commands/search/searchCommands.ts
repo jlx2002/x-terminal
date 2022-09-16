@@ -4,9 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:00:31
+ * @LastEditTime: 2022-09-16 22:04:10
  */
 import { CommandType } from "../../command";
+import acwingCommand from "./acwing/acwingCommand";
 import baiduCommand from "./baiduCommand";
 import bilibiliCommand from "./bilibiliCommand";
 import bingCommand from "./bingCommand";
@@ -40,6 +41,7 @@ const fromDict: Record<string, CommandType> = {
   bilibili: bilibiliCommand,
   mdn: mdnCommand,
   cainiao: cainiaoCommand,
+  acwing: acwingCommand,
 };
 
 /**
