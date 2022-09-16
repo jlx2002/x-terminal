@@ -4,10 +4,11 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 22:05:18
+ * @LastEditTime: 2022-09-16 21:59:27
  */
 import { CommandType } from "../../command";
 import baiduCommand from "./baiduCommand";
+import bilibiliCommand from "./bilibiliCommand";
 import bingCommand from "./bingCommand";
 import csdnCommand from "./csdnCommand";
 import doubanCommand from "./doubanCommand";
@@ -34,6 +35,7 @@ const fromDict: Record<string, CommandType> = {
   juejin: juejinCommand,
   zhihu: zhihuCommand,
   leetcode: leetcodeCommand,
+  bilibili: bilibiliCommand,
 };
 
 /**
