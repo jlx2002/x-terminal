@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-13 23:12:59
+ * @LastEditTime: 2022-09-17 20:02:11
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -61,23 +61,27 @@
             </template>
           </template>
         </template>
-        <div class="terminal-row">
-          <a-input
-            ref="commandInputRef"
-            v-model:value="inputCommand.text"
-            :disabled="isRunning"
-            class="command-input"
-            :placeholder="inputCommand.placeholder"
-            :bordered="false"
-            autofocus
-            @press-enter="doSubmitCommand"
-          >
-            <template #addonBefore>
-              <span class="command-input-prompt">{{ prompt }}</span>
-            </template>
-          </a-input>
-        </div>
       </a-collapse>
+      <div class="terminal-row">
+        <a-input
+          ref="commandInputRef"
+          v-model:value="inputCommand.text"
+          :disabled="isRunning"
+          class="command-input"
+          :placeholder="inputCommand.placeholder"
+          :bordered="false"
+          autofocus
+          @press-enter="doSubmitCommand"
+        >
+          <template #addonBefore>
+            <span class="command-input-prompt">{{ prompt }}</span>
+          </template>
+        </a-input>
+      </div>
+      <!-- 输入提示-->
+      <div v-if="hint && !isRunning" class="terminal-row" style="color: #bbb">
+        hint：{{ hint }}
+      </div>
       <div style="margin-bottom: 16px" />
     </div>
   </div>
@@ -91,7 +95,7 @@ export default {
 <script setup lang="ts">
 import contentOutput from "../shared/content-output.vue";
 import { mainStyle, wrapperStyle } from "./X-Terminal-Style";
-import { computed, ref, onMounted } from "vue";
+import { computed, ref, onMounted, watchEffect } from "vue";
 import { doCommandExecute } from "@/core/commandExecutor";
 import UserType = User.UserType;
 import CommandOutputType = Terminal.CommandOutputType;
@@ -100,6 +104,9 @@ import CommandInputType = Terminal.CommandInputType;
 import TerminalType = Terminal.TerminalType;
 import TextOutputType = Terminal.TextOutputType;
 import OutputStatusType = Terminal.OutputStatusType;
+import useHint from "./hint";
+import useHistory from "./history";
+import { registerShortcuts } from "./shortcut";
 // props 对象类型声明
 interface TerminalProps {
   height?: string | number;
@@ -113,6 +120,7 @@ const props = withDefaults(defineProps<TerminalProps>(), {
   fullScreen: false,
   user: "local" as any,
 });
+
 // 折叠面板
 const activeKeys = ref<number[]>([]);
 // 初始化命令
@@ -124,11 +132,13 @@ const initCommand: CommandInputType = {
 let inputCommand = ref<CommandInputType>({ ...initCommand });
 // 命令输出结果
 let outputList = ref<OutputType[]>([]);
+const commandInputRef = ref();
 // 命令是否正在执行
 let isRunning = ref(false);
 const terminalRef = ref();
 // 全局记录当前命令
 let currentNewCommand: CommandOutputType;
+
 /**
  * 设置命令是否可折叠
  * @param collapsible
@@ -141,9 +151,11 @@ const clear = () => {
   outputList.value = [];
 };
 /**
- * 写命令文本结果
- * @param text
- * @param status
+ * @description: 写命令文本结果
+ * @param {*} text
+ * @param {*} status
+ * @return {*}
+ * @author: jlx
  */
 const writeTextResult = (text: string, status?: OutputStatusType) => {
   const newOutput: TextOutputType = {
@@ -155,8 +167,9 @@ const writeTextResult = (text: string, status?: OutputStatusType) => {
 };
 
 /**
- * 写文本错误状态结果
- * @param text
+ * @description: 写文本错误状态结果
+ * @return {*}
+ * @author: jlx
  */
 const writeTextErrorResult = (text: string) => {
   console.log("error", text);
@@ -164,25 +177,31 @@ const writeTextErrorResult = (text: string) => {
 };
 
 /**
- * 写文本成功状态结果
- * @param text
+ * @description: 写文本成功状态结果
+ * @param {*} text
+ * @return {*}
+ * @author: jlx
  */
 const writeTextSuccessResult = (text: string) => {
   writeTextResult(text, "success");
 };
 
 /**
- * 写结果
- * @param output
+ * @description: 写结果
+ * @param {*} output
+ * @return {*}
+ * @author: jlx
  */
 const writeResult = (output: OutputType) => {
   currentNewCommand.resultList.push(output);
 };
 
 /**
- * 立即输出文本
- * @param text
- * @param status
+ * @description: 立即输出文本
+ * @param {*} text
+ * @param {*} status
+ * @return {*}
+ * @author: jlx
  */
 const writeTextOutput = (text: string, status?: OutputStatusType) => {
   const newOutput: TextOutputType = {
@@ -193,13 +212,28 @@ const writeTextOutput = (text: string, status?: OutputStatusType) => {
   outputList.value.push(newOutput);
 };
 /**
- * 立即输出
- * @param newOutput
+ * @description: 立即输出
+ * @param {*} newOutput
+ * @return {*}
+ * @author: jlx
  */
 const writeOutput = (newOutput: OutputType) => {
   outputList.value.push(newOutput);
 };
-
+/**
+ * @description: 输入框聚焦
+ * @return {*}
+ * @author: jlx
+ */
+const focusInput = () => {
+  commandInputRef.value.focus();
+};
+/**
+ * @description: 处理 提交命令
+ * @param {*} inputText
+ * @return {*}
+ * @author: jlx
+ */
 const onSubmitCommand = async (inputText: string) => {
   if (!inputText) {
     return;
@@ -208,8 +242,44 @@ const onSubmitCommand = async (inputText: string) => {
 };
 // 命令列表
 const commandList = ref<CommandOutputType[]>([]);
+/**
+ * 获取输入框是否聚焦
+ */
+const isInputFocused = () => {
+  return (
+    (commandInputRef.value.input as HTMLInputElement) == document.activeElement
+  );
+};
+const { hint, setHint, debounceSetHint } = useHint();
+const {
+  commandHistoryPos,
+  showPrevCommand,
+  showNextCommand,
+  listCommandHistory,
+} = useHistory(commandList.value, inputCommand);
+/**
+ * 设置输入框的值
+ */
+const setTabCompletion = () => {
+  if (hint.value) {
+    inputCommand.value.text = `${hint.value.split(" ")[0]}${
+      hint.value.split(" ").length > 1 ? " " : ""
+    }`;
+  }
+};
+
+// 输入框内容改变时，触发输入提示
+watchEffect(() => {
+  debounceSetHint(inputCommand.value.text);
+});
+/**
+ * @description: 提交命令
+ * @return {*}
+ * @author: jlx
+ */
 const doSubmitCommand = async () => {
   // 输入框加锁
+  setHint("");
   isRunning.value = true;
   let inputText = inputCommand.value.text;
   outputList.value.push({
@@ -230,7 +300,7 @@ const doSubmitCommand = async () => {
   if (inputText) {
     commandList.value.push(newCommand);
     // 重置当前要查看的命令位置
-    // commandHistoryPos.value = commandList.value.length;
+    commandHistoryPos.value = commandList.value.length;
   }
   inputCommand.value = { ...initCommand };
   // 默认展开折叠面板
@@ -239,13 +309,24 @@ const doSubmitCommand = async () => {
   setTimeout(() => {
     terminalRef.value.scrollTop = terminalRef.value.scrollHeight;
   }, 50);
-  // 输入框  恢复原样
-  inputCommand.value = { ...initCommand };
   isRunning.value = false;
 };
 // 输入框提示符 后期可以 换成 userName
 let prompt = ref("[local]$");
-
+/**
+ * 折叠 / 展开所有块
+ */
+const toggleAllCollapse = () => {
+  // 展开
+  if (activeKeys.value.length === 0) {
+    activeKeys.value = outputList.value.map((_, index) => {
+      return index;
+    });
+  } else {
+    // 折叠
+    activeKeys.value = [];
+  }
+};
 // 操作终端的对象
 const terminal: TerminalType = {
   writeTextResult,
@@ -257,8 +338,16 @@ const terminal: TerminalType = {
   clear,
   doSubmitCommand,
   setCommandCollapsible,
+  focusInput,
+  isInputFocused,
+  setTabCompletion,
+  showNextCommand,
+  showPrevCommand,
+  listCommandHistory,
+  toggleAllCollapse,
 };
 onMounted(() => {
+  registerShortcuts(terminal);
   terminal.writeTextOutput(
     `Welcome to MyIndex, coolest browser index for geeks!`
   );

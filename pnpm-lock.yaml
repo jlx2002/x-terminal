@@ -1,13 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/lodash': ^4.14.185
   '@types/node': ^18.7.15
   '@vitejs/plugin-vue': ^3.1.0
   ant-design-vue: ^3.2.12
   axios: ^0.27.2
   dayjs: ^1.11.5
   getopts: ^2.3.0
+  lodash: ^4.17.21
   pinia: ^2.0.22
+  pinia-plugin-persistedstate: ^2.2.0
   typescript: ^4.6.4
   unplugin-vue-components: ^0.22.4
   vite: ^3.1.0
@@ -20,11 +23,14 @@ dependencies:
   axios: 0.27.2
   dayjs: 1.11.5
   getopts: 2.3.0
+  lodash: 4.17.21
   pinia: 2.0.22_pj7ch6rmow6odq73xb5hfvge3q
+  pinia-plugin-persistedstate: 2.2.0_pinia@2.0.22
   vue: 3.2.38
   vue-router: 4.1.5_vue@3.2.38
 
 devDependencies:
+  '@types/lodash': 4.14.185
   '@types/node': 18.7.15
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.0+vue@3.2.38
   typescript: 4.8.2
@@ -137,6 +143,10 @@ packages:
       core-js: 3.25.0
       nanopop: 2.2.0
     dev: false
+
+  /@types/lodash/4.14.185:
+    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
+    dev: true
 
   /@types/node/18.7.15:
     resolution: {integrity: sha512-XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==}
@@ -838,6 +848,17 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pinia-plugin-persistedstate/2.2.0_pinia@2.0.22:
+    resolution: {integrity: sha512-j3CknBg4H17MXDwG+X6JT50wmGkxG5cWshVb5pdV8o/ivMxiVsML9ADwe7SEchas1myIWd6/sYeVv0/IGT5YrQ==}
+    peerDependencies:
+      pinia: ^2.0.0
+    peerDependenciesMeta:
+      pinia:
+        optional: true
+    dependencies:
+      pinia: 2.0.22_pj7ch6rmow6odq73xb5hfvge3q
+    dev: false
 
   /pinia/2.0.22_pj7ch6rmow6odq73xb5hfvge3q:
     resolution: {integrity: sha512-u+b8/BC+tmvo3ACbYO2w5NfxHWFOjvvw9DQnyT0dW8aUMCPRQT5QnfZ5R5W2MzZBMTeZRMQI7V/QFbafmM9QHw==}
