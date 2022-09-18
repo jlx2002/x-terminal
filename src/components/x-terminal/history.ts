@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 终端history历史
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-17 16:50:12
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-17 19:48:04
+ * @LastEditTime: 2022-09-17 22:24:38
  */
 import { Ref, ref } from "vue";
 import CommandOutputType = Terminal.CommandOutputType;

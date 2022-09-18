@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 终端hint 提示
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-17 16:46:58
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-17 17:36:16
+ * @LastEditTime: 2022-09-17 22:24:47
  */
 import { ref } from "vue";
 import { getUsageStr } from "@/core/commands/terminal/help/helpUtils";
