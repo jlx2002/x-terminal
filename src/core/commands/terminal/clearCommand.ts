@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: clear 清空命令列表
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-17 21:27:41
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 09:36:19
+ * @LastEditTime: 2022-09-18 09:50:31
  */
 import { CommandType } from "@/core/command";
 
@@ -16,7 +16,7 @@ import { CommandType } from "@/core/command";
 const clearCommand: CommandType = {
   func: "clear",
   name: "清屏",
-  alias: ["cl"],
+  alias: ["cl", "cls"],
   options: [],
   action(options, terminal): void {
     // 延时，把当前这条 clear 命令也清掉

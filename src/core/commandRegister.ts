@@ -4,13 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 09:36:43
+ * @LastEditTime: 2022-09-18 09:48:37
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
 import searchCommands from "./commands/search/searchCommands";
 import weatherCommand from "./commands/weather/weatherCommand";
 import clearCommand from "./commands/terminal/clearCommand";
+import translateCommand from "./commands/translate/translateCommand";
 
 // 命令列表
 const commandList: CommandType[] = [
@@ -18,6 +19,7 @@ const commandList: CommandType[] = [
   ...searchCommands,
   weatherCommand,
   clearCommand,
+  translateCommand,
 ];
 
 // 命令字典
