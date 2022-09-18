@@ -8,7 +8,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121545078.svg" width="100" height="100"/>
 
-| 名称           | 代号       | tid  | 简介                                                         | url路由                                                      |
+| 名称           | 代号       | rid  | 简介                                                         | url路由                                                      |
 | -------------- | ---------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 动画(主分区)   | douga      | 1    |                                                              | [/v/douga](https://www.bilibili.com/v/douga)                 |
 | MAD·AMV        | mad        | 24   | 具有一定制作程度的动画或静画的二次创作视频                   | [/v/douga/mad](https://www.bilibili.com/v/douga/mad)         |
@@ -22,7 +22,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121547055.svg"  with="100" height="100" />
 
-| 名称         | 代号        | tid  | 简介                                               | url路由                                                      |
+| 名称         | 代号        | rid  | 简介                                               | url路由                                                      |
 | ------------ | ----------- | ---- | -------------------------------------------------- | ------------------------------------------------------------ |
 | 番剧(主分区) | anime       | 13   |                                                    | [/anime](https://www.bilibili.com/anime)                     |
 | 连载动画     | serial      | 33   | 当季连载的动画番剧                                 | [/v/anime/serial](https://www.bilibili.com/v/anime/serial)   |
@@ -34,7 +34,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121547652.svg"  with="100" height="100" />
 
-| 名称          | 代号        | tid  | 简介              | url路由                                                      |
+| 名称          | 代号        | rid  | 简介              | url路由                                                      |
 | ------------- | ----------- | ---- | ----------------- | ------------------------------------------------------------ |
 | 国创(主分区)  | guochuang   | 167  |                   | [/guochuang](https://www.bilibili.com/guochuang)             |
 | 国产动画      | chinese     | 153  | 我国出品的PGC动画 | [/v/guochuang/chinese](https://www.bilibili.com/v/guochuang/chinese) |
@@ -47,7 +47,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548369.svg"  with="100" height="100" />
 
-| 名称          | 代号       | tid  | 简介                                                         | url路由                                                      |
+| 名称          | 代号       | rid  | 简介                                                         | url路由                                                      |
 | ------------- | ---------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 音乐(主分区)  | music      | 3    |                                                              | [/v/music](https://www.bilibili.com/v/music)                 |
 | 原创音乐      | original   | 28   | 个人或团队制作以音乐为主要原创因素的歌曲或纯音乐             | [/v/music/original](https://www.bilibili.com/v/music/original) |
@@ -63,7 +63,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548182.svg"  with="100" height="100" />
 
-| 名称         | 代号    | tid  | 简介                                                         | url路由                                                      |
+| 名称         | 代号    | rid  | 简介                                                         | url路由                                                      |
 | ------------ | ------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 舞蹈(主分区) | dance   | 129  |                                                              | [/v/dance](https://www.bilibili.com/v/dance)                 |
 | 宅舞         | otaku   | 20   | 与ACG相关的翻跳、原创舞蹈                                    | [/v/dance/otaku](https://www.bilibili.com/v/dance/otaku)     |
@@ -77,7 +77,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548842.svg"  with="100" height="100" />
 
-| 名称         | 代号        | tid  | 简介                                                         | url路由                                                      |
+| 名称         | 代号        | rid  | 简介                                                         | url路由                                                      |
 | ------------ | ----------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 游戏(主分区) | game        | 4    |                                                              | [/v/game](https://www.bilibili.com/v/game)                   |
 | 单机游戏     | stand_alone | 17   | 以所有平台(PC、主机、移动端)的单机或联机游戏为主的视频内容，包括游戏预告、CG、实况解说及相关的评测、杂谈与视频剪辑等 | [/v/game/stand_alone](https://www.bilibili.com/v/game/stand_alone) |
@@ -93,7 +93,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548667.svg"  with="100" height="100" />
 
-| 名称           | 代号             | tid  | 简介                                                   | url路由                                                      |
+| 名称           | 代号             | rid  | 简介                                                   | url路由                                                      |
 | -------------- | ---------------- | ---- | ------------------------------------------------------ | ------------------------------------------------------------ |
 | 知识(主分区)   | knowledge        | 36   |                                                        | [/v/knowledge](https://www.bilibili.com/v/knowledge)         |
 | 科学科普       | science          | 201  | 回答你的十万个为什么                                   | [/v/knowledge/science](https://www.bilibili.com/v/knowledge/science) |
@@ -109,7 +109,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548020.svg"  with="100" height="100" />
 
-| 名称           | 代号          | tid  | 简介                                                       | url路由                                                      |
+| 名称           | 代号          | rid  | 简介                                                       | url路由                                                      |
 | -------------- | ------------- | ---- | ---------------------------------------------------------- | ------------------------------------------------------------ |
 | 科技(主分区)   | tech          | 188  |                                                            | [/v/tech](https://www.bilibili.com/v/tech)                   |
 | 数码           | digital       | 95   | 科技数码产品大全，一起来做发烧友                           | [/v/tech/digital](https://www.bilibili.com/v/tech/digital)   |
@@ -122,7 +122,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548364.svg"  with="100" height="100" />
 
-| 名称         | 代号               | tid  | 简介                                                         | url路由                                                      |
+| 名称         | 代号               | rid  | 简介                                                         | url路由                                                      |
 | ------------ | ------------------ | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 运动(主分区) | sports             | 234  |                                                              | [/v/sports](https://www.bilibili.com/v/sports)               |
 | 篮球·足球    | basketballfootball | 235  | 与篮球、足球相关的视频，包括但不限于篮足球赛事、教学、评述、剪辑、剧情等相关内容 | [/v/sports/basketballfootball](https://www.bilibili.com/v/sports/basketballfootball) |
@@ -135,7 +135,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121548162.svg"  with="100" height="100" />
 
-| 名称         | 代号       | tid  | 简介                                                         | url路由                                                      |
+| 名称         | 代号       | rid  | 简介                                                         | url路由                                                      |
 | ------------ | ---------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 汽车(主分区) | car        | 223  |                                                              | [/v/car](https://www.bilibili.com/v/car)                     |
 | 汽车生活     | life       | 176  | 分享汽车及出行相关的生活体验类视频                           | [/v/car/life](https://www.bilibili.com/v/car/life)           |
@@ -150,7 +150,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549439.svg"  with="100" height="100" />
 
-| 名称         | 代号     | tid  | 简介                                           | url路由                                                      |
+| 名称         | 代号     | rid  | 简介                                           | url路由                                                      |
 | ------------ | -------- | ---- | ---------------------------------------------- | ------------------------------------------------------------ |
 | 生活(主分区) | life     | 160  |                                                | [/v/life](https://www.bilibili.com/v/life)                   |
 | 搞笑         | funny    | 138  | 各种沙雕有趣的搞笑剪辑，挑战，表演，配音等视频 | [/v/life/funny](https://www.bilibili.com/v/life/funny)       |
@@ -163,7 +163,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549093.svg"  with="100" height="100" />
 
-| 名称                         | 代号        | tid  | 简介                             | url路由                                                      |
+| 名称                         | 代号        | rid  | 简介                             | url路由                                                      |
 | ---------------------------- | ----------- | ---- | -------------------------------- | ------------------------------------------------------------ |
 | 美食(主分区)                 | food        | 211  |                                  | [/v/food](https://www.bilibili.com/v/food)                   |
 | 美食制作(原[生活]->[美食圈]) | make        | 76   | 学做人间美味，展示精湛厨艺       | [/v/food/make](https://www.bilibili.com/v/food/make)         |
@@ -176,7 +176,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549901.svg"  with="100" height="100" />
 
-| 名称     | 代号             | tid  | 简介                                                         | url路由                                                      |
+| 名称     | 代号             | rid  | 简介                                                         | url路由                                                      |
 | -------- | ---------------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 动物圈   | animal(主分区)   | 217  |                                                              | [/v/animal](https://www.bilibili.com/v/animal)               |
 | 喵星人   | cat              | 218  | 喵喵喵喵喵                                                   | [/v/animal/cat](https://www.bilibili.com/v/animal/cat)       |
@@ -190,7 +190,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549653.svg"  with="100" height="100" />
 
-| 名称         | 代号            | tid  | 简介                                                         | url路由                                                      |
+| 名称         | 代号            | rid  | 简介                                                         | url路由                                                      |
 | ------------ | --------------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 鬼畜(主分区) | kichiku         | 119  |                                                              | [/v/kichiku](https://www.bilibili.com/v/kichiku)             |
 | 鬼畜调教     | guide           | 22   | 使用素材在音频、画面上做一定处理，达到与BGM一定的同步感      | [/v/kichiku/guide](https://www.bilibili.com/v/kichiku/guide) |
@@ -203,7 +203,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549433.svg"  with="100" height="100" />
 
-| 名称         | 代号     | tid  | 简介                                                       | url路由                                                      |
+| 名称         | 代号     | rid  | 简介                                                       | url路由                                                      |
 | ------------ | -------- | ---- | ---------------------------------------------------------- | ------------------------------------------------------------ |
 | 时尚(主分区) | fashion  | 155  |                                                            | [/v/fashion](https://www.bilibili.com/v/fashion)             |
 | 美妆         | makeup   | 157  | 涵盖妆容、发型、美甲等教程，彩妆、护肤相关产品测评、分享等 | [/v/fashion/makeup](https://www.bilibili.com/v/fashion/makeup) |
@@ -214,7 +214,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549364.svg"  with="100" height="100" />
 
-| 名称         | 代号      | tid  | 简介                                     | url路由                                                      |
+| 名称         | 代号      | rid  | 简介                                     | url路由                                                      |
 | ------------ | --------- | ---- | ---------------------------------------- | ------------------------------------------------------------ |
 | 娱乐(主分区) | ent       | 5    |                                          | [/v/ent](https://www.bilibili.com/v/ent)                     |
 | 综艺         | variety   | 71   | 国内外有趣的综艺和综艺相关精彩剪辑       | [/v/ent/variety](https://www.bilibili.com/v/ent/variety)     |
@@ -226,7 +226,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121549894.svg"  with="100" height="100" />
 
-| 名称         | 代号         | tid  | 简介                             | url路由                                                      |
+| 名称         | 代号         | rid  | 简介                             | url路由                                                      |
 | ------------ | ------------ | ---- | -------------------------------- | ------------------------------------------------------------ |
 | 影视(主分区) | cinephile    | 181  |                                  | [/v/cinephile](https://www.bilibili.com/v/cinephile)         |
 | 影视杂谈     | cinecism     | 182  | 影视评论、解说、吐槽、科普等     | [/v/cinephile/cinecism](https://www.bilibili.com/v/cinephile/cinecism) |
@@ -238,7 +238,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121550204.svg"  with="100" height="100" />
 
-| 名称           | 代号        | tid  | 简介 | url路由                                                      |
+| 名称           | 代号        | rid  | 简介 | url路由                                                      |
 | -------------- | ----------- | ---- | ---- | ------------------------------------------------------------ |
 | 纪录片(主分区) | documentary | 177  |      | [/documentary](https://www.bilibili.com/documentary)         |
 | 人文·历史      | history     | 37   |      | [/v/documentary/history](https://www.bilibili.com/v/documentary/history) |
@@ -250,7 +250,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121550705.svg"  with="100" height="100" />
 
-| 名称         | 代号    | tid  | 简介 | url路由                                                      |
+| 名称         | 代号    | rid  | 简介 | url路由                                                      |
 | ------------ | ------- | ---- | ---- | ------------------------------------------------------------ |
 | 电影(主分区) | movie   | 23   |      | [/movie](https://www.bilibili.com/movie)                     |
 | 华语电影     | chinese | 147  |      | [/v/movie/chinese](https://www.bilibili.com/v/movie/chinese) |
@@ -262,7 +262,7 @@
 
 <img src="http://cdn.zutjlx.site//image/202209121550136.svg"  with="100" height="100" />
 
-| 名称           | 代号     | tid  | 简介 | url路由                                                  |
+| 名称           | 代号     | rid  | 简介 | url路由                                                  |
 | -------------- | -------- | ---- | ---- | -------------------------------------------------------- |
 | 电视剧(主分区) | tv       | 11   |      | [/tv](https://www.bilibili.com/tv)                       |
 | 国产剧         | mainland | 185  |      | [/v/tv/mainland](https://www.bilibili.com/v/tv/mainland) |
@@ -270,7 +270,7 @@
 
 ## 主分区汇总
 
-| 名称           | 代号           | tid  | 简介 | url路由                                              |
+| 名称           | 代号           | rid  | 简介 | url路由                                              |
 | -------------- | -------------- | ---- | ---- | ---------------------------------------------------- |
 | 动画(主分区)   | douga          | 1    |      | [/v/douga](https://www.bilibili.com/v/douga)         |
 | 番剧(主分区)   | anime          | 13   |      | [/anime](https://www.bilibili.com/anime)             |

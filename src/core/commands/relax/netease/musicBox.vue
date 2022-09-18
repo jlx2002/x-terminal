@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 20:26:08
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 20:40:06
+ * @LastEditTime: 2022-09-18 20:56:42
 -->
 <template>
   <div>
@@ -23,21 +23,22 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, toRefs } from "vue";
+import { onMounted, ref } from "vue";
 import { getNeteaseMusicByKeyword } from "@/api/musicApi";
 
 interface MusicBoxProps {
-  name: string;
+  word: string;
 }
 
 const props = withDefaults(defineProps<MusicBoxProps>(), {});
-const { name } = toRefs(props);
+const { word } = props;
 const musicPath = ref("");
 const errorHint = ref("");
 
 onMounted(async () => {
   // 搜索音乐，返回 id
-  const res: any = await getNeteaseMusicByKeyword(name.value);
+  //   console.log(word);
+  const res: any = await getNeteaseMusicByKeyword(word);
   if (res?.code === 0) {
     const music = res.data;
     musicPath.value = `//music.163.com/outchain/player?type=2&id=${music.id}&auto=1&height=66`;
