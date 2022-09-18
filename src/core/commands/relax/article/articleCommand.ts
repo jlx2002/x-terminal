@@ -4,12 +4,17 @@
  * @Autor: jlx
  * @Date: 2022-09-18 17:11:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 20:52:12
+ * @LastEditTime: 2022-09-18 22:29:47
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
 import ComponentOutputType = Terminal.ComponentOutputType;
 
+/**
+ * @description: 掘金随机文章命令
+ * @return {*}
+ * @author: jlx
+ */
 const articleCommand: CommandType = {
   func: "article",
   name: "掘金文章随机若干篇",

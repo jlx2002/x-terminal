@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 17:11:54
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 19:41:23
+ * @LastEditTime: 2022-09-18 22:54:42
 -->
 <template>
   <a-spin :spinning="spinning">
@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import InfiniteList from "vue3-infinite-list";
 import { getArticleRandom } from "@/api/articleApi";
-import { ref, onMounted, toRef } from "vue";
+import { ref, onMounted } from "vue";
 import _ from "lodash";
 // 声明 porps对象
 interface articleProps {
@@ -83,7 +83,12 @@ const getArticles = async () => {
   //   console.log(articleList.value);
   spinning.value = false;
 };
-
+/**
+ * @description: 处理滚动事件
+ * @param {*} e
+ * @return {*}
+ * @author: jlx
+ */
 const scrollEvent = (e: any) => {
   // 滚动的像素+容器的高度>=可滚动的总高度 (保留10px的误差)
   if (
@@ -96,6 +101,7 @@ const scrollEvent = (e: any) => {
 };
 
 onMounted(() => {
+  // 初始化数据
   getArticles();
   // 加上节流
   document

@@ -4,12 +4,17 @@
  * @Autor: jlx
  * @Date: 2022-09-18 20:26:18
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 20:42:23
+ * @LastEditTime: 2022-09-18 22:30:09
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
 import ComponentOutputType = Terminal.ComponentOutputType;
 
+/**
+ * @description: 网易云搜索命令
+ * @return {*}
+ * @author: jlx
+ */
 const musicCommand: CommandType = {
   func: "music",
   name: "网易云音乐搜索",
