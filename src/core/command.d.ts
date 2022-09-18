@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 09:23:17
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 17:30:11
+ * @LastEditTime: 2022-09-18 20:44:03
  */
 import { ParsedOptions } from "getopts";
 import TerminalType = Terminal.TerminalType;
@@ -54,7 +54,7 @@ interface CommandOptionType {
   key: string; // 参数名，比如 --word
   alias?: string[]; // 命令简写，比如 -w
   desc?: string; // 描述
-  type: "string" | "boolean" | "number";
+  type: "string" | "boolean";
   defaultValue?: string | boolean; // 默认值，标识作用
   required?: boolean; // 是否必填
 }

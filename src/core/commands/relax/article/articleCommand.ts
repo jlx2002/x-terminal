@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 17:11:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 17:34:50
+ * @LastEditTime: 2022-09-18 20:52:12
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -19,14 +19,16 @@ const articleCommand: CommandType = {
       key: "size",
       desc: "文章篇数",
       alias: ["s"],
-      type: "number",
+      type: "string",
     },
   ],
   collapsible: true,
   action(options, terminal) {
-    const { size = 20 } = options;
-    if (size >= 100) {
-      terminal.writeTextErrorResult("请求参数过大,请更换小于100的参数!");
+    let { size = "20" } = options;
+    if (size.startsWith("=")) size = size.replace("=", "");
+    size = parseInt(size);
+    if (size >= 100 || isNaN(size)) {
+      terminal.writeTextErrorResult("请求参数不合法!");
       return;
     }
     const output: ComponentOutputType = {
