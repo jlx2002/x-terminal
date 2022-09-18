@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-17 20:02:11
+ * @LastEditTime: 2022-09-18 16:22:28
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -282,10 +282,11 @@ const doSubmitCommand = async () => {
   setHint("");
   isRunning.value = true;
   let inputText = inputCommand.value.text;
-  outputList.value.push({
-    type: "text",
-    text: inputText,
-  });
+  // 测试输出内容
+  // outputList.value.push({
+  //   type: "text",
+  //   text: inputText,
+  // });
   // 执行命令
   const newCommand: CommandOutputType = {
     text: inputText,
