@@ -17,6 +17,7 @@ specifiers:
   vue: ^3.2.37
   vue-router: '4'
   vue-tsc: ^0.40.4
+  vue3-infinite-list: ^0.2.5
 
 dependencies:
   ant-design-vue: 3.2.12_vue@3.2.38
@@ -28,6 +29,7 @@ dependencies:
   pinia-plugin-persistedstate: 2.2.0_pinia@2.0.22
   vue: 3.2.38
   vue-router: 4.1.5_vue@3.2.38
+  vue3-infinite-list: 0.2.5_vue@3.2.38
 
 devDependencies:
   '@types/lodash': 4.14.185
@@ -1116,6 +1118,19 @@ packages:
       '@vue/runtime-dom': 3.2.38
       '@vue/server-renderer': 3.2.38_vue@3.2.38
       '@vue/shared': 3.2.38
+
+  /vue3-infinite-list/0.2.5_vue@3.2.38:
+    resolution: {integrity: sha512-3G8ePqOtJJ/TW/0vdbcy9wFdN7vXxsTjXjp0u22FjOVMCQFJrs45Vjaws2ffoPU3kXn+waT1qOP+w3fuwKcqaw==}
+    peerDependencies:
+      '@vue/composition-api': '1'
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.38
+      vue-demi: 0.13.11_vue@3.2.38
+    dev: false
 
   /warning/4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}

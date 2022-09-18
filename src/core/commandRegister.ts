@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 16:09:38
+ * @LastEditTime: 2022-09-18 17:37:48
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
@@ -13,6 +13,7 @@ import weatherCommand from "./commands/weather/weatherCommand";
 import clearCommand from "./commands/terminal/clearCommand";
 import translateCommand from "./commands/translate/translateCommand";
 import dateCommand from "./commands/relax/dateCommand";
+import articleCommand from "./commands/relax/article/articleCommand";
 
 // 命令列表
 const commandList: CommandType[] = [
@@ -22,6 +23,7 @@ const commandList: CommandType[] = [
   clearCommand,
   translateCommand,
   dateCommand,
+  articleCommand,
 ];
 
 // 命令字典
