@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 22:02:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 23:13:35
+ * @LastEditTime: 2022-09-19 19:40:06
 -->
 <template>
   <div>
@@ -14,6 +14,7 @@
       marginheight="0"
       :src="videos[activeKey]"
       scrolling="auto"
+      class="video"
     />
     <br />
     <a-space>
@@ -85,4 +86,9 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.video {
+  width: 50%;
+  aspect-ratio: 25/12;
+}
+</style>

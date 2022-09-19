@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 20:58:44
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 23:16:35
+ * @LastEditTime: 2022-09-19 19:19:32
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -19,12 +19,12 @@ const videoCommand: CommandType = {
   func: "video",
   name: "b站热门视频",
   alias: ["shipin", "movie"],
-  desc: "视频分区代码: https://juejin.cn/post/7144721889158496286/",
+  desc: "视频分区代码: https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/video/video_zone.md",
   params: [],
   options: [
     {
       key: "kind",
-      desc: "分类",
+      desc: "是否选择观看分区",
       alias: ["k"],
       type: "boolean",
     },
