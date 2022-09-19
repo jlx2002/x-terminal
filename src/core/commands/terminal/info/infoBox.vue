@@ -1,10 +1,10 @@
 <!--
- * @Description: 请填写文件简介
+ * @Description: info 本站信息
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-19 20:42:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:19:47
+ * @LastEditTime: 2022-09-19 21:24:50
 -->
 <template>
   <div>关于本站： 极客范儿的浏览器主页</div>

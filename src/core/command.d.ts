@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 命令command 限制类型约束
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-08 09:23:17
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 20:44:03
+ * @LastEditTime: 2022-09-19 21:27:55
  */
 import { ParsedOptions } from "getopts";
 import TerminalType = Terminal.TerminalType;

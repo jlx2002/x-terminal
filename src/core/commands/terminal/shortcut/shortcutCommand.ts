@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 快捷键命令shortcutCommand
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-19 20:38:40
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:21:21
+ * @LastEditTime: 2022-09-19 21:25:37
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";

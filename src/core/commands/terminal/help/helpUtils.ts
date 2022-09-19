@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: help 辅助方法
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-09 11:11:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:51:09
+ * @LastEditTime: 2022-09-19 21:26:48
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 

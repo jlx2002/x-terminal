@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 查看本站信息命令
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-19 20:37:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:56:34
+ * @LastEditTime: 2022-09-19 21:25:01
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";

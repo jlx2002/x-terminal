@@ -1,10 +1,10 @@
 <!--
- * @Description: 请填写文件简介
+ * @Description: help 单个命令 组件
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-09 11:10:02
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:51:37
+ * @LastEditTime: 2022-09-19 21:26:25
 -->
 <template>
   <div>

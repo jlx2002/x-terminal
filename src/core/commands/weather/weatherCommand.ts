@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: weather 命令
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-15 16:27:20
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 20:37:46
+ * @LastEditTime: 2022-09-19 21:27:38
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";

@@ -1,10 +1,10 @@
 /*
- * @Description: 请填写文件简介
+ * @Description: 命令注册器
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:22:44
+ * @LastEditTime: 2022-09-19 21:28:18
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";

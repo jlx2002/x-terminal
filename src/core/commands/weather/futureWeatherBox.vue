@@ -1,10 +1,10 @@
 <!--
- * @Description: 请填写文件简介
+ * @Description: 未来3天天气预测
  * @Version: 0.0
  * @Autor: jlx
  * @Date: 2022-09-16 16:35:24
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 20:50:33
+ * @LastEditTime: 2022-09-19 21:27:18
 -->
 
 <template>
