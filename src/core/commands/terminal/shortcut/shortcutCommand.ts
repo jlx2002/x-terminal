@@ -4,7 +4,16 @@
  * @Autor: jlx
  * @Date: 2022-09-19 20:38:40
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:49:32
+ * @LastEditTime: 2022-09-19 21:21:21
+ */
+import { CommandType } from "@/core/command";
+import { defineAsyncComponent } from "vue";
+import ComponentOutputType = Terminal.ComponentOutputType;
+
+/**
+ * @description: 快捷键命令
+ * @return {*}
+ * @author: jlx
  */
 const shortcutCommand: CommandType = {
   func: "shortcut",
@@ -17,7 +26,7 @@ const shortcutCommand: CommandType = {
   action(options, terminal): void {
     const output: ComponentOutputType = {
       type: "component",
-      component: defineAsyncComponent(() => import("./ShortcutBox.vue")),
+      component: defineAsyncComponent(() => import("./shortcutBox.vue")),
     };
     terminal.writeResult(output);
   },
