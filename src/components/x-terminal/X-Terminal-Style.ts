@@ -4,9 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-09 10:56:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-13 16:34:59
+ * @LastEditTime: 2022-09-19 19:09:47
  */
 import { computed, StyleValue } from "vue";
+import { useTerminalConfigStore } from "@/store/config/terminalConfigStore";
+
+// 引入终端配置状态
+const configStore = useTerminalConfigStore();
+
 // 终端主要样式，可以换成接收 height
 export const mainStyle = computed(() => {
   const fullScreenStyle: StyleValue = {
@@ -21,8 +26,7 @@ export const mainStyle = computed(() => {
 });
 // 终端包装类主样式
 export const wrapperStyle = computed(() => {
-  const background =
-    "https://tva2.sinaimg.cn/large/9bd9b167gy1g4lizxwzlrj21hc0xcqv5.jpg";
+  const { background } = configStore;
   const style = {
     ...mainStyle.value,
   };

@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 16:56:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-17 17:26:42
+ * @LastEditTime: 2022-09-19 19:09:39
  */
 import { defineStore } from "pinia";
 
@@ -16,7 +16,8 @@ import { defineStore } from "pinia";
 export const useTerminalConfigStore = defineStore("terminalConfig", {
   state: () => ({
     // 背景
-    background: "black",
+    background:
+      "https://tva2.sinaimg.cn/large/9bd9b167gy1g4lizxwzlrj21hc0xcqv5.jpg",
     // 输入提示
     showHint: true,
     // 终端欢迎语
