@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:10:06
+ * @LastEditTime: 2022-09-19 20:09:37
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
@@ -17,6 +17,7 @@ import articleCommand from "./commands/relax/article/articleCommand";
 import musicCommand from "./commands/relax/netease/neteaseCommand";
 import videoCommand from "./commands/relax/bilibili/videoCommand";
 import backgroundCommand from "./commands/terminal/config/backgroundCommand";
+import resetCommand from "./commands/terminal/config/resetCommand";
 
 // 命令列表
 const commandList: CommandType[] = [
@@ -30,6 +31,7 @@ const commandList: CommandType[] = [
   musicCommand,
   videoCommand,
   backgroundCommand,
+  resetCommand,
 ];
 
 // 命令字典

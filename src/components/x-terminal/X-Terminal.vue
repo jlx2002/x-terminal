@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 16:22:28
+ * @LastEditTime: 2022-09-19 20:08:16
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -94,7 +94,7 @@ export default {
 
 <script setup lang="ts">
 import contentOutput from "../shared/content-output.vue";
-import { mainStyle, wrapperStyle } from "./X-Terminal-Style";
+import { mainStyle, welcomeTexts, wrapperStyle } from "./X-Terminal-Data";
 import { computed, ref, onMounted, watchEffect } from "vue";
 import { doCommandExecute } from "@/core/commandExecutor";
 import UserType = User.UserType;
@@ -349,9 +349,11 @@ const terminal: TerminalType = {
 };
 onMounted(() => {
   registerShortcuts(terminal);
-  terminal.writeTextOutput(
-    `Welcome to MyIndex, coolest browser index for geeks!`
-  );
+  if (welcomeTexts?.length > 0) {
+    welcomeTexts.forEach((welcomeText) => {
+      terminal.writeTextOutput(welcomeText);
+    });
+  }
 });
 
 // 暴露给父组件

@@ -4,13 +4,16 @@
  * @Autor: jlx
  * @Date: 2022-09-09 10:56:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:09:47
+ * @LastEditTime: 2022-09-19 20:04:06
  */
 import { computed, StyleValue } from "vue";
 import { useTerminalConfigStore } from "@/store/config/terminalConfigStore";
 
 // 引入终端配置状态
 const configStore = useTerminalConfigStore();
+
+// 终端欢迎语
+export const { welcomeTexts } = configStore;
 
 // 终端主要样式，可以换成接收 height
 export const mainStyle = computed(() => {

@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 20:58:44
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:19:32
+ * @LastEditTime: 2022-09-19 19:49:58
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -17,7 +17,7 @@ import ComponentOutputType = Terminal.ComponentOutputType;
  */
 const videoCommand: CommandType = {
   func: "video",
-  name: "b站热门视频",
+  name: "b站最新热门视频",
   alias: ["shipin", "movie"],
   desc: "视频分区代码: https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/video/video_zone.md",
   params: [],

@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 16:56:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:09:39
+ * @LastEditTime: 2022-09-19 20:06:19
  */
 import { defineStore } from "pinia";
 
@@ -21,7 +21,9 @@ export const useTerminalConfigStore = defineStore("terminalConfig", {
     // 输入提示
     showHint: true,
     // 终端欢迎语
-    welcomeTexts: [] as string[],
+    welcomeTexts: [
+      "Welcome to MyIndex, coolest browser index for geeks!",
+    ] as string[],
   }),
   getters: {},
   // 持久化

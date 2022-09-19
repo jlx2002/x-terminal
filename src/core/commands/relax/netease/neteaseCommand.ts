@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 20:26:18
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 22:30:09
+ * @LastEditTime: 2022-09-19 19:50:19
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -17,7 +17,7 @@ import ComponentOutputType = Terminal.ComponentOutputType;
  */
 const musicCommand: CommandType = {
   func: "music",
-  name: "网易云音乐搜索",
+  name: "网易云音乐关键词搜索",
   alias: ["netease", "yinyue"],
   params: [
     {
