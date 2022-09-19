@@ -44,7 +44,24 @@
 
 ##### 用户注册
 
-**OP** 指的是 sequelize 里面的运算符 
+```js
+ /** 
+ * @description: 获取分区热门视频 
+ * @param {*} rid 分区id 
+ * @return {*} 
+ * @author: jlx 
+ */
+	async function getKindHotByRid(rid) {    
+        if (rid <= 0) {        
+            throw new MyError(REQUEST_PARAMS_ERROR_CODE, "请求参数错误");    
+        }    
+        const result = getBilibiliRankTopByRid(rid);    
+        if (!result) {
+            throw new MyError(THIRD_PART_SERVICE_ERROR_CODE);
+        }    
+        return result;
+    }
+```
 
 逻辑： 验证 用户名 ，密码， 邮箱是否合法，如果合法，在数据库查 是否存在有重复的用户名或者邮箱，如果没有再进行插入
 
