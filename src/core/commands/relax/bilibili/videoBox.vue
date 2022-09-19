@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 22:02:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:40:06
+ * @LastEditTime: 2022-09-19 21:00:07
 -->
 <template>
   <div>
@@ -28,10 +28,10 @@
 import { getHotBiliBiliVideo } from "@/api/videoApi";
 import { ref, onMounted } from "vue";
 // 当前选择播放的视频id
-let activeKey = ref(0);
+let activeKey = ref<number>(0);
 
 // 页数和页容量
-let pageNum = ref(1);
+let pageNum = ref<number>(1);
 const pageSize = 10;
 
 // 存储视频 链接的列表

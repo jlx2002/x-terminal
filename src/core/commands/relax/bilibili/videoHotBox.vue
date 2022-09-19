@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-18 22:16:06
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 19:40:00
+ * @LastEditTime: 2022-09-19 21:07:46
 -->
 <template>
   <div>
@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import { getBiliBiliHotVideoByRid, getHotBiliBiliVideo } from "@/api/videoApi";
 import { ref, onMounted } from "vue";
+import { message } from "ant-design-vue";
 
 // 声明 porps对象
 interface videoHotBoxProps {
@@ -37,10 +38,10 @@ const props = withDefaults(defineProps<videoHotBoxProps>(), {});
 // 页面请求的分页
 const { rid = 1 } = props;
 // 当前选择播放的视频id
-let activeKey = ref(0);
+let activeKey = ref<number>(0);
 
 // 页数和页容量
-let pageNum = ref(1);
+let pageNum = ref<number>(1);
 const pageSize = 10;
 
 // 存储视频 链接的列表
@@ -53,6 +54,7 @@ let videos = ref<any>([]);
  * @author: jlx
  */
 const handleBack = () => {
+  // console.log(activeKey.value);
   if (activeKey.value == 0) {
     // 循环算法，取0 - 1，返回到队尾
     activeKey.value = videos.value.length - 1;
@@ -67,9 +69,10 @@ const handleBack = () => {
  * @author: jlx
  */
 const handleNext = () => {
-  // 当下标溢出时，请求数据，扩容video数组
+  // 当下标溢出时，提示
   if (activeKey.value + 1 == videos.value.length) {
-    getVideos();
+    message.error("视频访问量有限！");
+    return;
   }
   // 扩容后就可以直接 + 1
   activeKey.value++;
