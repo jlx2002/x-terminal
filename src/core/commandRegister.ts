@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:28:18
+ * @LastEditTime: 2022-09-19 21:32:34
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
@@ -21,6 +21,7 @@ import resetCommand from "./commands/terminal/config/resetCommand";
 import welcomeCommand from "./commands/terminal/config/welcomeCommand";
 import hintCommand from "./commands/terminal/config/hintCommand";
 import infoCommand from "./commands/terminal/info/infoCommand";
+import shortcutCommand from "./commands/terminal/shortcut/shortcutCommand";
 
 // 命令列表
 const commandList: CommandType[] = [
@@ -38,6 +39,7 @@ const commandList: CommandType[] = [
   welcomeCommand,
   hintCommand,
   infoCommand,
+  shortcutCommand,
 ];
 
 // 命令字典
