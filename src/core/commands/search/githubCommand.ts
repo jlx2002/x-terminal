@@ -4,9 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:58:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:37:32
+ * @LastEditTime: 2022-09-19 20:53:44
  */
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description: github 仓库搜索

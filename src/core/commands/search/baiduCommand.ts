@@ -4,9 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:41:47
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:36:38
+ * @LastEditTime: 2022-09-19 20:52:48
  */
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description: 百度搜索命令

@@ -4,9 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-16 10:55:57
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 15:08:13
+ * @LastEditTime: 2022-09-19 20:52:56
  */
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description:  bilibili 搜索关键词

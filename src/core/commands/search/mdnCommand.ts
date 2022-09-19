@@ -4,9 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-14 22:31:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:37:52
+ * @LastEditTime: 2022-09-19 20:53:59
  */
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description: mdn 中文文档搜索关键词

@@ -4,13 +4,13 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:12:46
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:42:52
+ * @LastEditTime: 2022-09-19 20:48:09
  */
 
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const router: any = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       name: "index",

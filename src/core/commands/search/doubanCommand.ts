@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-15 16:25:25
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 16:32:05
+ * @LastEditTime: 2022-09-19 20:53:20
  */
 
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description:  豆瓣 搜索关键词

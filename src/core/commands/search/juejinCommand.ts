@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-15 16:24:26
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-15 16:51:15
+ * @LastEditTime: 2022-09-19 20:53:56
  */
 
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description:  掘金 搜索关键词

@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:59:03
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:37:21
+ * @LastEditTime: 2022-09-19 20:53:25
  */
 
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description: gitee 仓库搜索

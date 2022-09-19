@@ -4,9 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-14 22:42:17
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:37:02
+ * @LastEditTime: 2022-09-19 20:53:12
  */
-import { CommandType } from "../../command";
+import { CommandType } from "@/core/command";
 
 /**
  * @description: 菜鸟教程 搜索关键词
