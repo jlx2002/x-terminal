@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-16 20:45:45
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:36:03
+ * @LastEditTime: 2022-09-20 22:48:18
  */
 import dayjs from "@/plugins/myDayjs";
 import myAxios from "@/plugins/myAxios";
@@ -35,9 +35,24 @@ const calcWeekly = () => {
   }
 };
 
+/**
+ * @description: 获取周赛链接
+ * @return {*}
+ * @author: jlx
+ */
 const getContestLink = async () => {
   const week = calcWeekly();
   return await myAxios.post("/acwing/contest", { contest: week });
 };
 
-export { getContestLink };
+/**
+ * @description: 获取活动链接
+ * @param {string} keyword 关键词
+ * @return {*}
+ * @author: jlx
+ */
+const getActivityLink = async (keyword: string) => {
+  return await myAxios.post("/acwing/activity", { keywords: keyword });
+};
+
+export { getContestLink, getActivityLink };

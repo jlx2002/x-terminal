@@ -4,12 +4,17 @@
  * @Autor: jlx
  * @Date: 2022-09-15 16:27:20
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:27:38
+ * @LastEditTime: 2022-09-20 22:36:01
  */
 import { CommandOptionType, CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
 import ComponentOutputType = Terminal.ComponentOutputType;
 
+/**
+ * @description: 天气命令
+ * @return {*}
+ * @author: jlx
+ */
 const weatherCommand: CommandType = {
   func: "weather",
   name: "天气预报",
