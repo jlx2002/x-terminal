@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:08:16
+ * @LastEditTime: 2022-09-21 21:03:21
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -95,7 +95,7 @@ export default {
 <script setup lang="ts">
 import contentOutput from "../shared/content-output.vue";
 import { mainStyle, welcomeTexts, wrapperStyle } from "./X-Terminal-Data";
-import { computed, ref, onMounted, watchEffect } from "vue";
+import { computed, ref, onMounted, watchEffect, toRefs } from "vue";
 import { doCommandExecute } from "@/core/commandExecutor";
 import UserType = User.UserType;
 import CommandOutputType = Terminal.CommandOutputType;
@@ -121,6 +121,8 @@ const props = withDefaults(defineProps<TerminalProps>(), {
   user: "local" as any,
 });
 
+// 获取 user
+const { user } = toRefs(props);
 // 折叠面板
 const activeKeys = ref<number[]>([]);
 // 初始化命令
@@ -313,7 +315,7 @@ const doSubmitCommand = async () => {
   isRunning.value = false;
 };
 // 输入框提示符 后期可以 换成 userName
-let prompt = ref("[local]$");
+let prompt = ref(`[${user.value.username}]$`);
 /**
  * 折叠 / 展开所有块
  */

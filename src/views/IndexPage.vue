@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:19:02
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-13 22:46:41
+ * @LastEditTime: 2022-09-21 21:01:33
 -->
 <template>
   <a-tabs
@@ -19,7 +19,7 @@
       :tab="pane.title"
       :closable="pane.closable"
     >
-      <XTerminal></XTerminal>
+      <XTerminal :user="loginUser"></XTerminal>
     </a-tab-pane>
     <template #renderTabBar="{ DefaultTabBar, ...props }">
       <component :is="DefaultTabBar" v-bind="props" :style="tabsStyle" />
@@ -29,7 +29,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, StyleValue } from "vue";
-
+import { useUserStore } from "@/store/userStore";
+import { storeToRefs } from "pinia";
 /**
  * @description: 自定义标签页头部样式
  * @return {*}
@@ -105,10 +106,15 @@ const onEdit = (targetKey: string | MouseEvent, action: string) => {
   }
 };
 
+const userStore = useUserStore();
+const { loginUser } = storeToRefs(userStore);
+
 onMounted(() => {
   // 修改标签页内容为全屏
   const content = document.querySelector(".ant-tabs-content");
   content?.setAttribute("style", "height: 100%");
+  // 登录用户
+  userStore.getAndSetLoginUser();
 });
 </script>
 
