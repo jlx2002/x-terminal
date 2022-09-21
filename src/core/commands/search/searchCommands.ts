@@ -4,8 +4,9 @@
  * @Autor: jlx
  * @Date: 2022-09-14 21:38:09
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:06:20
+ * @LastEditTime: 2022-09-21 11:04:39
  */
+import { replaceEqual } from "@/utils/removeEqual";
 import { CommandType } from "../../command";
 import acwingCommand from "./acwing/acwingCommand";
 import baiduCommand from "./baiduCommand";
@@ -73,7 +74,8 @@ const searchCommand: CommandType = {
   ],
   // 默认使用百度搜索
   action: (options, terminal) => {
-    const { from = "baidu" } = options;
+    let { from = "baidu" } = options;
+    from = replaceEqual(from);
     // 执行不同搜索源的搜索方法
     const fromObj = fromDict[from];
     if (!fromObj) {

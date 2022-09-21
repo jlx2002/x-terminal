@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 21:30:25
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-18 09:53:13
+ * @LastEditTime: 2022-09-21 10:57:11
  */
 import { getTranslateAns } from "@/api/translateApi";
 import { CommandType } from "@/core/command";
@@ -29,7 +29,7 @@ const translateCommand: CommandType = {
   async action(options, terminal) {
     const { _ } = options;
     const sentence = _.length > 0 ? _[0] : "";
-    // 如果 城市为空
+    // 如果 翻译内容
     if (sentence == "") {
       terminal.writeTextErrorResult("翻译内容不能为空！");
       return;

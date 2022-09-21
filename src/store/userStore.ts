@@ -4,18 +4,18 @@
  * @Autor: jlx
  * @Date: 2022-09-17 16:55:44
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 22:50:09
+ * @LastEditTime: 2022-09-21 10:43:15
  */
 import { defineStore } from "pinia";
-// import { getLoginUser } from "@/api/userApi";
-// import { LOCAL_USER } from "./userConstant";
+import { getLoginUser } from "@/api/userApi";
+import { LOCAL_USER } from "@/core/commands/user/userConstant";
 import UserType = User.UserType;
 
 export const useUserStore = defineStore("user", {
   state: () => ({
-    //   loginUser: {
-    //     ...LOCAL_USER,
-    //   },
+    loginUser: {
+      ...LOCAL_USER,
+    },
   }),
   getters: {},
   // 持久化
@@ -30,17 +30,17 @@ export const useUserStore = defineStore("user", {
     },
   },
   actions: {
-    //   async getAndSetLoginUser() {
-    //     const res: any = await getLoginUser();
-    //     if (res?.code === 0 && res.data) {
-    //       this.loginUser = res.data;
-    //     } else {
-    //       console.error("登录失败");
-    //       this.$reset();
-    //     }
-    //   },
-    //   setLoginUser(user: UserType) {
-    //     this.loginUser = user;
-    //   },
+    async getAndSetLoginUser() {
+      const res: any = await getLoginUser();
+      if (res?.code === 0 && res.data) {
+        this.loginUser = res.data;
+      } else {
+        console.error("登录失败");
+        this.$reset();
+      }
+    },
+    setLoginUser(user: UserType) {
+      this.loginUser = user;
+    },
   },
 });
