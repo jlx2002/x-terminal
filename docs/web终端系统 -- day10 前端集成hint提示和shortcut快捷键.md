@@ -12,3 +12,8 @@ pinia 可持久化存储的插件
 >
 >  pnpm i --save-dev @types/lodash
 
+### hint 提示功能
+
+
+
+### shortcut 快捷键功能

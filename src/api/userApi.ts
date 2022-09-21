@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 21:30:55
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 10:29:20
+ * @LastEditTime: 2022-09-21 15:02:09
  */
 import myAxios from "@/plugins/myAxios";
 
@@ -54,4 +54,13 @@ export const userRegister = async (
  */
 export const getLoginUser = async () => {
   return await myAxios.post("/user/current");
+};
+
+/**
+ * @description: 获取书签列表
+ * @return {*}
+ * @author: jlx
+ */
+export const getBookmarkList = async () => {
+  return await myAxios.post("/bookmark/get");
 };
