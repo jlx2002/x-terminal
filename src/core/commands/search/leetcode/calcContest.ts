@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-15 20:12:51
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 22:35:44
+ * @LastEditTime: 2022-09-21 11:17:25
  */
 import dayjs from "@/plugins/myDayjs";
 
@@ -23,7 +23,7 @@ let startBiWeek = 87;
 const calcWeekly = () => {
   let now = dayjs(Date.now());
   let week = 0;
-  while (true) {
+  while (week < 300) {
     // 左区间
     let left = weeklyStart.add(week * 7, "day");
     // 右区间
@@ -45,14 +45,13 @@ const calcWeekly = () => {
 const calcBiWeekly = () => {
   let now = dayjs(Date.now());
   let week = 0;
-  while (true) {
+  while (week < 300) {
     // 左区间
     let left = weeklyStart.add(week * 14, "day");
     // 右区间
     let right = left.add(7, "day");
-    // console.log(left, right);
     // 在该区间内
-    if (now.isBetween(left, right)) {
+    if (now.isBetween(left, right) || right.isAfter(now)) {
       return week + startBiWeek;
     }
     week++;
