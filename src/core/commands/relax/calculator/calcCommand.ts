@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-21 14:36:06
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 14:52:28
+ * @LastEditTime: 2022-09-21 23:00:23
  */
 import { CommandType } from "@/core/command";
 import { calculate } from "./calculator";
@@ -26,23 +26,13 @@ const calculatorCommand: CommandType = {
       required: true,
     },
   ],
-  options: [
-    {
-      key: "equation",
-      desc: "是否计算方程",
-      alias: ["e"],
-      type: "boolean",
-    },
-  ],
+  options: [],
   action(options, terminal) {
-    const { _, equation } = options;
+    const { _ } = options;
     const expression = _.length > 0 ? _[0] : "";
-    const res = calculate(expression);
+    const res: string = calculate(expression);
     console.log(res);
-    // 计算方程
-    // if (equation) {
-
-    // }
+    terminal.writeTextSuccessResult(`计算结果是：${res}`);
   },
 };
 
