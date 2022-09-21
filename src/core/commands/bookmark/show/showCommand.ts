@@ -4,13 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-21 11:09:11
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 16:31:55
+ * @LastEditTime: 2022-09-21 20:37:00
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
 import ComponentOutputType = Terminal.ComponentOutputType;
 import { useUserStore } from "@/store/userStore";
 import { LOCAL_USER } from "@/core/commands/user/userConstant";
+import { getBookmarkList } from "@/api/userApi";
 /**
  * @description: 展示 已收藏的书签列表
  * @return {*}
@@ -27,6 +28,11 @@ const showCommand: CommandType = {
     // 查询当前用户是否登录，如果没有登录
     if (!loginUser || loginUser.username === LOCAL_USER.username) {
       terminal.writeTextErrorResult("未登录，请执行 user login 命令登录");
+      return;
+    }
+    const result: any = await getBookmarkList();
+    if (result?.code === 500) {
+      terminal.writeTextErrorResult("出现异常");
       return;
     }
     const output: ComponentOutputType = {

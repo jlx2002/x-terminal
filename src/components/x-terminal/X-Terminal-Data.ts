@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-09 10:56:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 20:04:06
+ * @LastEditTime: 2022-09-21 17:00:32
  */
 import { computed, StyleValue } from "vue";
 import { useTerminalConfigStore } from "@/store/config/terminalConfigStore";

@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-17 21:30:55
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 15:02:09
+ * @LastEditTime: 2022-09-21 20:08:21
  */
 import myAxios from "@/plugins/myAxios";
-
+import bookmark = Bookmark.bookmarkType;
 /**
  * @description: 用户登录
  * @param {string} username
@@ -63,4 +63,14 @@ export const getLoginUser = async () => {
  */
 export const getBookmarkList = async () => {
   return await myAxios.post("/bookmark/get");
+};
+
+/**
+ * @description: 添加书签
+ * @param {bookmark} bookmark
+ * @return {*}
+ * @author: jlx
+ */
+export const addBookmark = async (add_bookmark: bookmark) => {
+  return await myAxios.post("/bookmark/add", add_bookmark);
 };

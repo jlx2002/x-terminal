@@ -4,20 +4,47 @@
  * @Autor: jlx
  * @Date: 2022-09-17 16:55:44
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 10:43:15
+ * @LastEditTime: 2022-09-21 19:58:47
  */
 import { defineStore } from "pinia";
-import { getLoginUser } from "@/api/userApi";
+import { getBookmarkList, getLoginUser } from "@/api/userApi";
 import { LOCAL_USER } from "@/core/commands/user/userConstant";
 import UserType = User.UserType;
+import bookmark = Bookmark.bookmarkType;
+import { CommandType } from "@/core/command";
 
 export const useUserStore = defineStore("user", {
-  state: () => ({
-    loginUser: {
-      ...LOCAL_USER,
+  state: () => {
+    return {
+      loginUser: {
+        ...LOCAL_USER,
+      },
+      bookmarkList: new Array<bookmark>(),
+    };
+  },
+  getters: {
+    bookmarkCommands(state) {
+      // 定义命令列表
+      let commandsList: CommandType[] = [];
+      // 遍历赋值
+      for (let bookmark of state.bookmarkList) {
+        let command: CommandType = {
+          func: bookmark.keys,
+          name: bookmark.url,
+          desc: bookmark.desc,
+          alias: [bookmark.nickname || ""],
+          params: [],
+          options: [],
+          action(options, terminal) {
+            let targetLink = bookmark.url;
+            window.open(targetLink);
+          },
+        };
+        commandsList.push(command);
+      }
+      return commandsList;
     },
-  }),
-  getters: {},
+  },
   // 持久化
   persist: {
     key: "user-store",
@@ -34,6 +61,14 @@ export const useUserStore = defineStore("user", {
       const res: any = await getLoginUser();
       if (res?.code === 0 && res.data) {
         this.loginUser = res.data;
+        // 获取 书签列表
+        const result: any = await getBookmarkList();
+        if (result?.code === 0) {
+          // 书签列表赋值操作
+          this.bookmarkList = result.data;
+        } else {
+          console.error("书签获取失败");
+        }
       } else {
         console.error("登录失败");
         this.$reset();
