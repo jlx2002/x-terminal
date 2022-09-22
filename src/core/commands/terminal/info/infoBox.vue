@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-19 20:42:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:24:50
+ * @LastEditTime: 2022-09-22 20:28:02
 -->
 <template>
   <div>关于本站： 极客范儿的浏览器主页</div>
@@ -20,10 +20,10 @@
       Acaax
     </a>
   </div>
-  <div>
+  <!-- <div>
     友情链接(练手项目)：
     <a href="http://www.zutjlx.site:3000/" target="_blank"> 仿掘金官网 </a>
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">

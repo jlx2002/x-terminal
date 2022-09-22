@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-21 11:09:11
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 20:37:00
+ * @LastEditTime: 2022-09-22 19:46:20
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -24,13 +24,13 @@ const showCommand: CommandType = {
   options: [],
   collapsible: true,
   async action(options, terminal) {
-    const { loginUser } = useUserStore();
+    const { token } = useUserStore();
     // 查询当前用户是否登录，如果没有登录
-    if (!loginUser || loginUser.username === LOCAL_USER.username) {
+    if (!token) {
       terminal.writeTextErrorResult("未登录，请执行 user login 命令登录");
       return;
     }
-    const result: any = await getBookmarkList();
+    const result: any = await getBookmarkList(token);
     if (result?.code === 500) {
       terminal.writeTextErrorResult("出现异常");
       return;

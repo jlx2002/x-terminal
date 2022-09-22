@@ -4,12 +4,12 @@
  * @Autor: jlx
  * @Date: 2022-09-21 09:54:28
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 10:48:19
+ * @LastEditTime: 2022-09-22 17:54:58
  */
 import { CommandType } from "@/core/command";
 import { useUserStore } from "@/store/userStore";
 import loginCommand from "./subCommands/loginCommand";
-import logoutCommand from "./subCommands/logoutCommand";
+
 import registerCommand from "./subCommands/registerCommand";
 import { LOCAL_USER } from "./userConstant";
 
@@ -32,7 +32,6 @@ const userCommand: CommandType = {
   subCommands: {
     login: loginCommand,
     register: registerCommand,
-    logout: logoutCommand,
   },
   options: [],
   async action(options, terminal) {

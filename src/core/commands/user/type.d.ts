@@ -4,13 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-08 09:24:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-09 21:44:03
+ * @LastEditTime: 2022-09-22 19:50:54
  */
 declare namespace User {
   /**
    * 用户类型
    */
   interface UserType {
+    id: number;
     username: string;
     email?: string;
     createTime?: date;

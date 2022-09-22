@@ -4,12 +4,13 @@
  * @Autor: jlx
  * @Date: 2022-09-21 11:08:51
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 08:31:21
+ * @LastEditTime: 2022-09-22 17:57:39
  */
 import { addBookmark } from "@/api/userApi";
 import { CommandType } from "@/core/command";
 import { replaceEqual } from "@/utils/removeEqual";
-
+import { useUserStore } from "@/store/userStore";
+const { token } = useUserStore();
 /**
  * @description: 添加书签 命令
  * @return {*}
@@ -62,12 +63,15 @@ const addCommand: CommandType = {
         url = replaceEqual(url);
         desc = replaceEqual(desc);
         alias = replaceEqual(alias);
-        const res: any = await addBookmark({
-          keys: func,
-          url,
-          desc,
-          nickname: alias,
-        });
+        const res: any = await addBookmark(
+          {
+            keys: func,
+            url,
+            desc,
+            nickname: alias,
+          },
+          token
+        );
         if (res?.code === 500) {
           terminal.writeTextErrorResult("用户没有登录，不能进行该操作");
         } else {

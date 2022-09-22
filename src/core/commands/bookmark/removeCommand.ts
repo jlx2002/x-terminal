@@ -4,12 +4,19 @@
  * @Autor: jlx
  * @Date: 2022-09-21 11:09:23
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 08:39:22
+ * @LastEditTime: 2022-09-22 17:58:09
  */
 import { CommandType } from "@/core/command";
 import { removeBookmark } from "@/api/userApi";
 import { replaceEqual } from "@/utils/removeEqual";
+import { useUserStore } from "@/store/userStore";
+const { token } = useUserStore();
 
+/**
+ * @description: 移除书签
+ * @return {*}
+ * @author: jlx
+ */
 const removeCommand: CommandType = {
   func: "remove",
   name: "删除书签",
@@ -30,7 +37,7 @@ const removeCommand: CommandType = {
     // 检验参数是否为空
     if (func) {
       func = replaceEqual(func);
-      const res: any = await removeBookmark(func);
+      const res: any = await removeBookmark(func, token);
       if (res?.code === 500) {
         terminal.writeTextErrorResult("用户没有登录，不能进行该操作");
       } else if (res?.code != 0) {

@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-21 09:54:48
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 11:01:34
+ * @LastEditTime: 2022-09-22 17:39:40
  */
 import { CommandType } from "@/core/command";
-import { userLogin, userRegister, userLogout } from "@/api/userApi";
+import { userLogin, userRegister } from "@/api/userApi";
 import { useUserStore } from "@/store/userStore";
 import { replaceEqual } from "@/utils/removeEqual";
 
@@ -51,7 +51,7 @@ const loginCommand: CommandType = {
     const res: any = await userLogin(username, password);
     const { setLoginUser } = useUserStore();
     if (res?.code === 0) {
-      setLoginUser(res.data);
+      setLoginUser(res.data.user, res.data.token);
       terminal.writeTextSuccessResult("登录成功");
     } else {
       terminal.writeTextErrorResult(res?.message ?? "登录失败");

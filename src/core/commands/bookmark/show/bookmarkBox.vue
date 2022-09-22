@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-21 14:54:07
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 20:52:19
+ * @LastEditTime: 2022-09-22 17:53:55
 -->
 <template>
   <div>
@@ -22,13 +22,16 @@
 
 <script setup lang="ts">
 import { ref, Ref, onMounted } from "vue";
+import { useUserStore } from "@/store/userStore";
 import { getBookmarkList } from "@/api/userApi";
 import bookmark = Bookmark.bookmarkType;
 // 书签列表
 const bookmarkList: Ref<bookmark[]> = ref([]);
+// 获取token
+const { token } = useUserStore();
 // 获取书签列表
 const getData = async () => {
-  const result = await getBookmarkList();
+  const result = await getBookmarkList(token);
 
   // console.log(result.data);
   bookmarkList.value = [...result.data];

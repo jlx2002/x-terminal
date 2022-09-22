@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 21:30:55
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 08:36:30
+ * @LastEditTime: 2022-09-22 18:09:25
  */
 import myAxios from "@/plugins/myAxios";
 import bookmark = Bookmark.bookmarkType;
@@ -20,15 +20,6 @@ export const userLogin = async (username: string, password: string) => {
     return null;
   }
   return await myAxios.post("/user/login", { username, password });
-};
-
-/**
- * @description: 用户登出
- * @return {*}
- * @author: jlx
- */
-export const userLogout = async () => {
-  return await myAxios.post("/user/logout");
 };
 
 /**
@@ -52,8 +43,16 @@ export const userRegister = async (
  * @return {*}
  * @author: jlx
  */
-export const getLoginUser = async () => {
-  return await myAxios.post("/user/current");
+export const getLoginUser = async (token: string) => {
+  return await myAxios.post(
+    "/user/current",
+    {},
+    {
+      headers: {
+        Authorization: `Bear ${token}`,
+      },
+    }
+  );
 };
 
 /**
@@ -61,8 +60,16 @@ export const getLoginUser = async () => {
  * @return {*}
  * @author: jlx
  */
-export const getBookmarkList = async () => {
-  return await myAxios.post("/bookmark/get");
+export const getBookmarkList = async (token: string) => {
+  return await myAxios.post(
+    "/bookmark/get",
+    {},
+    {
+      headers: {
+        Authorization: `Bear ${token}`,
+      },
+    }
+  );
 };
 
 /**
@@ -71,10 +78,27 @@ export const getBookmarkList = async () => {
  * @return {*}
  * @author: jlx
  */
-export const addBookmark = async (add_bookmark: bookmark) => {
-  return await myAxios.post("/bookmark/add", add_bookmark);
+export const addBookmark = async (add_bookmark: bookmark, token: string) => {
+  return await myAxios.post("/bookmark/add", add_bookmark, {
+    headers: {
+      Authorization: `Bear ${token}`,
+    },
+  });
 };
-
-export const removeBookmark = async (key: string) => {
-  return await myAxios.post("/bookmark/delete", { keys: key });
+/**
+ * @description: 删除书签
+ * @param {string} key
+ * @return {*}
+ * @author: jlx
+ */
+export const removeBookmark = async (key: string, token: string) => {
+  return await myAxios.post(
+    "/bookmark/delete",
+    { keys: key },
+    {
+      headers: {
+        Authorization: `Bear ${token}`,
+      },
+    }
+  );
 };

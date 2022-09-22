@@ -4,10 +4,10 @@
  * @Autor: jlx
  * @Date: 2022-09-21 09:54:57
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 11:02:39
+ * @LastEditTime: 2022-09-22 17:55:09
  */
 import { CommandType } from "@/core/command";
-import { userLogin, userRegister, userLogout } from "@/api/userApi";
+import { userLogin, userRegister } from "@/api/userApi";
 import { useUserStore } from "@/store/userStore";
 import { replaceEqual } from "@/utils/removeEqual";
 

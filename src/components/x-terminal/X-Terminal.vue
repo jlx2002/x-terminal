@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 21:03:21
+ * @LastEditTime: 2022-09-22 19:55:24
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -315,7 +315,7 @@ const doSubmitCommand = async () => {
   isRunning.value = false;
 };
 // 输入框提示符 后期可以 换成 userName
-let prompt = ref(`[${user.value.username}]$`);
+let prompt = ref(`[${user.value.username || "local"}]$`);
 /**
  * 折叠 / 展开所有块
  */

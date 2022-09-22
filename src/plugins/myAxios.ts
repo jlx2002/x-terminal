@@ -4,21 +4,25 @@
  * @Autor: jlx
  * @Date: 2022-09-16 14:57:27
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-16 15:00:03
+ * @LastEditTime: 2022-09-22 19:53:02
  */
 import axios from "axios";
 
-// 自定义 axios 实例
-const myAxios = axios.create({
+const configs = {
+  //   https://teriminal-6243-4-1309167060.sh.run.tcloudbase.com/api
+  // http://localhost:7345/api
   baseURL: "https://teriminal-6243-4-1309167060.sh.run.tcloudbase.com/api",
-});
+  timeout: 5000,
+};
+
+// 自定义 axios 实例
+const myAxios = axios.create(configs);
 
 myAxios.defaults.withCredentials = true;
 
 // 添加请求拦截器
 myAxios.interceptors.request.use(
   function (config) {
-    // 在发送请求之前做些什么
     return config;
   },
   function (error) {

@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 16:55:44
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 19:58:47
+ * @LastEditTime: 2022-09-22 19:45:27
  */
 import { defineStore } from "pinia";
 import { getBookmarkList, getLoginUser } from "@/api/userApi";
@@ -19,6 +19,7 @@ export const useUserStore = defineStore("user", {
       loginUser: {
         ...LOCAL_USER,
       },
+      token: "",
       bookmarkList: new Array<bookmark>(),
     };
   },
@@ -58,24 +59,30 @@ export const useUserStore = defineStore("user", {
   },
   actions: {
     async getAndSetLoginUser() {
-      const res: any = await getLoginUser();
-      if (res?.code === 0 && res.data) {
-        this.loginUser = res.data;
-        // 获取 书签列表
-        const result: any = await getBookmarkList();
-        if (result?.code === 0) {
-          // 书签列表赋值操作
-          this.bookmarkList = result.data;
+      if (this.token != "") {
+        const res: any = await getLoginUser(this.token);
+        if (res?.code === 0 && res.data) {
+          this.loginUser = res.data.user;
+          // 获取 书签列表
+          const result: any = await getBookmarkList(this.token);
+          if (result?.code === 0) {
+            // 书签列表赋值操作
+            this.bookmarkList = result.data;
+          } else {
+            console.error("书签获取失败");
+          }
         } else {
-          console.error("书签获取失败");
+          console.log("token已经过期，请重新登录！");
+          this.$reset();
         }
       } else {
-        console.error("登录失败");
+        console.log("登录失败");
         this.$reset();
       }
     },
-    setLoginUser(user: UserType) {
+    setLoginUser(user: UserType, token: string) {
       this.loginUser = user;
+      this.token = token;
     },
   },
 });
