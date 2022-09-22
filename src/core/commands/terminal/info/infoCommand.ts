@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-19 20:37:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:25:01
+ * @LastEditTime: 2022-09-22 09:01:00
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
@@ -23,7 +23,7 @@ const infoCommand: CommandType = {
   action(options, terminal): void {
     const output: ComponentOutputType = {
       type: "component",
-      component: defineAsyncComponent(() => import("./InfoBox.vue")),
+      component: defineAsyncComponent(() => import("./infoBox.vue")),
     };
     terminal.writeResult(output);
   },
