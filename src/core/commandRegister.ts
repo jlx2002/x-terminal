@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 21:08:25
+ * @LastEditTime: 2022-09-22 08:26:12
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
@@ -27,6 +27,7 @@ import calculatorCommand from "./commands/relax/calculator/calcCommand";
 import showCommand from "./commands/bookmark/show/showCommand";
 import addCommand from "./commands/bookmark/addCommand";
 import { useUserStore } from "@/store/userStore";
+import removeCommand from "./commands/bookmark/removeCommand";
 
 // 获取 store
 const store = useUserStore();
@@ -52,6 +53,7 @@ const commandList: CommandType[] = [
   calculatorCommand,
   showCommand,
   addCommand,
+  removeCommand,
   ...store.bookmarkCommands,
 ];
 

@@ -4,10 +4,11 @@
  * @Autor: jlx
  * @Date: 2022-09-21 11:08:51
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 20:28:26
+ * @LastEditTime: 2022-09-22 08:31:21
  */
 import { addBookmark } from "@/api/userApi";
 import { CommandType } from "@/core/command";
+import { replaceEqual } from "@/utils/removeEqual";
 
 /**
  * @description: 添加书签 命令
@@ -50,13 +51,17 @@ const addCommand: CommandType = {
     },
   ],
   async action(options, terminal) {
-    const { func, url, desc, alias } = options;
+    let { func, url, desc, alias } = options;
     const url_test =
       /^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/;
     // 检验参数是否为空
     if (func && url) {
       // 正则 判断link
       if (url_test.test(url)) {
+        func = replaceEqual(func);
+        url = replaceEqual(url);
+        desc = replaceEqual(desc);
+        alias = replaceEqual(alias);
         const res: any = await addBookmark({
           keys: func,
           url,

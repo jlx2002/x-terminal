@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-17 21:30:55
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-21 20:08:21
+ * @LastEditTime: 2022-09-22 08:36:30
  */
 import myAxios from "@/plugins/myAxios";
 import bookmark = Bookmark.bookmarkType;
@@ -73,4 +73,8 @@ export const getBookmarkList = async () => {
  */
 export const addBookmark = async (add_bookmark: bookmark) => {
   return await myAxios.post("/bookmark/add", add_bookmark);
+};
+
+export const removeBookmark = async (key: string) => {
+  return await myAxios.post("/bookmark/delete", { keys: key });
 };
