@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-19 20:42:29
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 20:28:02
+ * @LastEditTime: 2022-10-04 09:38:27
 -->
 <template>
   <div>关于本站： 极客范儿的浏览器主页</div>
@@ -20,10 +20,12 @@
       Acaax
     </a>
   </div>
-  <!-- <div>
-    友情链接(练手项目)：
-    <a href="http://www.zutjlx.site:3000/" target="_blank"> 仿掘金官网 </a>
-  </div> -->
+  <div>
+    友情链接(懒人导航网)：
+    <a href="https://lanrenao.com" target="_blank">
+      懒人导航网 | 全网最实用简洁的懒人导航
+    </a>
+  </div>
 </template>
 
 <script setup lang="ts">
