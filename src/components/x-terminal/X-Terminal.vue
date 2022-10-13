@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 20:07:53
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 19:55:24
+ * @LastEditTime: 2022-10-13 17:30:02
 -->
 <template>
   <div class="terminal-wrapper" :style="wrapperStyle">
@@ -81,6 +81,11 @@
       <!-- 输入提示-->
       <div v-if="hint && !isRunning" class="terminal-row" style="color: #bbb">
         hint：{{ hint }}
+      </div>
+      <div style="color: #fff; position: fixed; bottom: 0; right: 0">
+        <a href="https://beian.miit.gov.cn/" target="_blank"
+          >豫ICP备2022016304号-2</a
+        >
       </div>
       <div style="margin-bottom: 16px" />
     </div>
