@@ -17,7 +17,7 @@ export const useTerminalConfigStore = defineStore("terminalConfig", {
   state: () => ({
     // 背景
     background:
-      "https://tvax2.sinaimg.com/large/9bd9b167gy1g4lizxwzlrj21hc0xcqv5.jpg",
+      "https://cdn.zutjlx.site/image/202301041656909.jpg",
     // 输入提示
     showHint: true,
     // 终端欢迎语
