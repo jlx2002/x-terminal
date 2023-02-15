@@ -4,14 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-16 14:57:27
  * @LastEditors: jlx
- * @LastEditTime: 2022-11-14 18:01:41
+ * @LastEditTime: 2023-02-15 11:53:51
  */
 import axios from "axios";
 
 const configs = {
   //   https://teriminal-6243-4-1309167060.sh.run.tcloudbase.com/api
   // http://localhost:7345/api
-  baseURL: "https://teriminal-6243-4-1309167060.sh.run.tcloudbase.com/api",
+  baseURL: "https://api.x-terminal.cn/api/",
   timeout: 5000,
 };
 
