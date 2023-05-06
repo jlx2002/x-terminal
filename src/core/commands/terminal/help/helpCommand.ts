@@ -4,17 +4,14 @@
  * @Autor: jlx
  * @Date: 2022-09-08 17:02:03
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-19 21:26:31
+ * @LastEditTime: 2023-05-06 21:14:24
  */
 import { CommandType } from "@/core/command";
 import { defineAsyncComponent } from "vue";
 import { commandMap } from "@/core/commandRegister";
 import ComponentOutputType = Terminal.ComponentOutputType;
 
-/**
- * 帮助命令
- * @author yupi
- */
+
 const helpCommand: CommandType = {
   func: "help",
   name: "查看帮助",
