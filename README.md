@@ -4,6 +4,19 @@
 
 视频演示：[https://cdn.zutjlx.site/recording/x-terminal.mp4](https://cdn.zutjlx.site/recording/x-terminal.mp4)
 
+## 6.24 更新
+
+更新chat 命令 (支持 chatgpt3.5 版本智能对话)
+
+目前预设的角色有: 
+- english (英文学习助手)  
+- sql (sql 终端机)
+- command (command 命令提示助手)
+- lang (语言检测)
+
+> 最多支持保留4条上下文数据
+> 单条问答最长支持2000token
+
 ## 快速启动项目
 
 ### 前端启动
