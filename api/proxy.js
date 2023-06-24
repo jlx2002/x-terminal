@@ -8,6 +8,7 @@ module.exports = (req, res) => {
   }
   let target = "https://abc.zutjlx.site/api" + req.url.substring(prefix.length);
 
+  console.log(target);
   createProxyMiddleware({
     target,
     changeOrigin: true,
