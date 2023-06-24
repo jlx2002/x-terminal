@@ -22,7 +22,7 @@ interface useChat {
 }
 
 export default function (useChatParam: useChatParams): useChat {
-  const url = "/apis/openai/v1/chat/completions";
+  const url = "https://api.zutjlx.site/proxy/api.openai.com/v1/chat/completions";
   let controller = new AbortController();
   const { answer } = useChatParam;
 
@@ -125,7 +125,7 @@ export default function (useChatParam: useChatParams): useChat {
       headers: {
         Authorization:
           "Bearer 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",
-        "Content-Type": "text/event-stream",
+        // "Content-Type": "text/event-stream",
       },
       onDownloadProgress: function (progressEvent: any) {
         const tt = progressEvent.event.currentTarget.responseText;

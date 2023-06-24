@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-07 19:51:34
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 13:39:26
+ * @LastEditTime: 2023-06-24 22:14:17
  */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -27,13 +27,13 @@ export default defineConfig({
       resolvers: [AntDesignVueResolver()],
     }),
   ],
-  server:{
-    proxy: {
-      '/apis': {
-        target: 'https://abc.zutjlx.site/api',	//实际请求地址
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/apis/, '')
-      },
-    }
-  }
+  // server:{
+  //   proxy: {
+  //     '/apis': {
+  //       target: 'https://abc.zutjlx.site/api',	//实际请求地址
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/apis/, '')
+  //     },
+  //   }
+  // }
 });
