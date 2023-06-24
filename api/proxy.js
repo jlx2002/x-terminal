@@ -1,6 +1,12 @@
-const { createProxyMiddleware } = require("http-proxy-middleware");
+/*
+ * @Description: 请填写文件简介
+ * @Autor: jlx
+ * @Date: 2023-06-24 21:12:49
+ * @LastEditors: jlx
+ */
+import { createProxyMiddleware } from "http-proxy-middleware";
 
-module.exports = (req, res) => {
+const requuset = (req, res) => {
   // proxy middleware options
   let prefix = "/apis";
   if (!req.url.startsWith(prefix)) {
@@ -19,3 +25,5 @@ module.exports = (req, res) => {
     },
   })(req, res);
 };
+
+export default requuset;
