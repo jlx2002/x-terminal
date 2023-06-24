@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/apis/(.*)",
-      "destination": "/api/proxy"
+      "destination": "https://abc.zutjlx.site/api"
     }
   ]
 }
