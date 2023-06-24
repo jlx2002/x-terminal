@@ -4,7 +4,7 @@
  * @Autor: jlx
  * @Date: 2022-09-08 16:50:33
  * @LastEditors: jlx
- * @LastEditTime: 2022-09-22 08:26:12
+ * @LastEditTime: 2023-06-22 22:18:29
  */
 import { CommandType } from "./command";
 import helpCommand from "./commands/terminal/help/helpCommand";
@@ -16,6 +16,7 @@ import dateCommand from "./commands/relax/dateCommand";
 import articleCommand from "./commands/relax/article/articleCommand";
 import musicCommand from "./commands/relax/netease/neteaseCommand";
 import videoCommand from "./commands/relax/bilibili/videoCommand";
+import chatCommand from "./commands/chat/chatCommand";
 import backgroundCommand from "./commands/terminal/config/backgroundCommand";
 import resetCommand from "./commands/terminal/config/resetCommand";
 import welcomeCommand from "./commands/terminal/config/welcomeCommand";
@@ -44,6 +45,7 @@ const commandList: CommandType[] = [
   articleCommand,
   musicCommand,
   videoCommand,
+  chatCommand,
   backgroundCommand,
   resetCommand,
   welcomeCommand,

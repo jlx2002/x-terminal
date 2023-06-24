@@ -27,4 +27,13 @@ export default defineConfig({
       resolvers: [AntDesignVueResolver()],
     }),
   ],
+  server:{
+    proxy: {
+      '/apis': {
+        target: 'https://abc.zutjlx.site/api',	//实际请求地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/apis/, '')
+      },
+    }
+  }
 });

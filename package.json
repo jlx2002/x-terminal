@@ -9,20 +9,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
     "ant-design-vue": "^3.2.12",
-    "axios": "^0.27.2",
+    "axios": "^1.4.0",
     "dayjs": "^1.11.5",
     "getopts": "^2.3.0",
+    "http-proxy-middleware": "^2.0.6",
     "lodash": "^4.17.21",
     "pinia": "^2.0.22",
     "pinia-plugin-persistedstate": "^2.2.0",
+    "prismjs": "^1.29.0",
     "vue": "^3.2.37",
     "vue-router": "4",
     "vue3-infinite-list": "^0.2.5"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.15",
+    "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "typescript": "^4.6.4",
     "unplugin-vue-components": "^0.22.4",
