@@ -37,6 +37,12 @@ const chatCommand: CommandType = {
   action(options, terminal) {
     let { _, role } = options;
     const message = _.length > 0 ? _[0] : "";
+    // 验证key
+    const key = localStorage.getItem('openai_key');
+    if(!key || !key.startsWith('sk')){
+      terminal.writeTextErrorResult('密钥错误！');
+      return ;
+    }
     // 如果 提示语为空
     if (message == "") {
       terminal.writeTextErrorResult("提示语不能为空！");

@@ -25,6 +25,8 @@ export default function (useChatParam: useChatParams): useChat {
   const url = "https://api.zutjlx.site/proxy/api.openai.com/v1/chat/completions";
   let controller = new AbortController();
   const { answer } = useChatParam;
+  // 验证key
+  const key = localStorage.getItem('openai_key');
 
   /**
    * @description: 获取role 对应的config
@@ -123,8 +125,7 @@ export default function (useChatParam: useChatParams): useChat {
       url,
       data: reqConfig,
       headers: {
-        Authorization:
-          "Bearer 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",
+        Authorization:`Bearer ${key}`,
         // "Content-Type": "text/event-stream",
       },
       onDownloadProgress: function (progressEvent: any) {
